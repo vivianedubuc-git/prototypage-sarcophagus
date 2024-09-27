@@ -15,9 +15,4 @@ public class SCR_Combatant : MonoBehaviour
     {
         Debug.Log("A combatant got damaged!");
     }
-
-    public void Die()
-    {
-        Debug.Log("A combatant died!");
-    }
 }

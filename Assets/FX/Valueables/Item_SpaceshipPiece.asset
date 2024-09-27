@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab74cb697af6a394e8fdfaf6f42adf74, type: 3}
-  m_Name: StatusValues_MC
+  m_Script: {fileID: 11500000, guid: 601f90a1423ca044eb25763ef9ba64bb, type: 3}
+  m_Name: Item_SpaceshipPiece
   m_EditorClassIdentifier: 
-  _maxHP: 50
-  _maxBattery: 100
-  _initialATK: 0
-  _DEF: 15
-  _initialATKSpeed: 0
-  _inventoryCapacity: 5
+  _itemName: Spaceship Piece
+  _itemType: 1

@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 7654580084846175023}
   - component: {fileID: 3738884859991038724}
   - component: {fileID: 3417432873165472747}
+  - component: {fileID: 7492977953173861423}
   m_Layer: 3
   m_Name: PR_MC
   m_TagString: Untagged
@@ -436,6 +437,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
+--- !u!114 &7492977953173861423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095122552518032878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff96c5282f8d6ec459633881a6904c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
+  _lItemsToAdd:
+  - Placeables/Pickups/SpaceshipPiece
+  _lItems: []
 --- !u!1 &7535091082579785246
 GameObject:
   m_ObjectHideFlags: 0

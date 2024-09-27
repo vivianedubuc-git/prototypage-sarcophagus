@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab74cb697af6a394e8fdfaf6f42adf74, type: 3}
   m_Name: StatusValues_Human
   m_EditorClassIdentifier: 
-  _maxHP: 100
-  _maxBattery: 0
-  _ATK: 1
-  _DEF: 1
-  _ATKSpeed: 1
+  _maxHP: 16
+  _maxBattery: 100
+  _ATK: 10
+  _DEF: 15
+  _ATKSpeed: 5
