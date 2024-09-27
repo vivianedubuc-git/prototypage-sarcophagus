@@ -9,6 +9,8 @@ public class SO_Item : ScriptableObject
     public string itemName { get { return _itemName; } }
     [SerializeField] private ItemType _itemType;
     public ItemType itemType { get { return _itemType; } }
+    [SerializeField] private Sprite _sprite;
+    public Sprite sprite { get { return _sprite; } }
     [SerializeField] private int _ATKBonus;
     public int ATKBonus { get { return _ATKBonus; } }
     [SerializeField] private int _ATKSpeedBonus;

@@ -30,7 +30,6 @@ public class SCR_Enemy : SCR_Combatant
     private IEnumerator CoroutineAttack()
     {
         _isAttacking = true;
-        Debug.Log("Enemy attacks!");
         yield return new WaitForSeconds(10 / _statusValues.ATKSpeed);
         _isAttacking = false;
     }
@@ -41,7 +40,6 @@ public class SCR_Enemy : SCR_Combatant
         int damage = CalculateDamage(MC.ATK, _statusValues.DEF);
         int tempHP = _statusValues.HP;
         _statusValues.HP -= damage;
-        Debug.Log("Enemy has " + _statusValues.HP + " HP left!");
         if (_statusValues.HP <= 0) Die();
         else if (_statusValues.HP < tempHP) AnimateDamage();
         yield return new WaitForSeconds(10 / MC.ATKSpeed);

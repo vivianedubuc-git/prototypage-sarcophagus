@@ -35,9 +35,9 @@ public class SCR_RandomBattles : MonoBehaviour
     private void InstantiateEnemy()
     {
         int random = Random.Range(1, 3);
-        float x = random == 1 ? Random.Range(_minimumDistance + _position.x, _maximumDistance + _position.x): Random.Range(_minimumDistance - _position.x, _maximumDistance - _position.x);
+        float x = random == 1 ? Random.Range(_position.x + _minimumDistance, _position.x + _maximumDistance): Random.Range(_position.x - _minimumDistance, _position.x - _maximumDistance);
         random = Random.Range(1, 3);
-        float y = random == 1 ? Random.Range(_minimumDistance + _position.y, _maximumDistance + _position.y) : Random.Range(_minimumDistance - _position.y, _maximumDistance - _position.y);
+        float y = random == 1 ? Random.Range(_position.y + _minimumDistance, _position.y + _maximumDistance) : Random.Range(_position.y - _minimumDistance, _position.y - _maximumDistance);
         Instantiate(_enemy, new Vector2(x, y), Quaternion.identity, transform);
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHP: 50
   _maxBattery: 100
-  _initialATK: 0
+  _initialATK: 10
   _DEF: 15
-  _initialATKSpeed: 0
-  _inventoryCapacity: 5
+  _initialATKSpeed: 5
+  _initialInventoryCapacity: 5

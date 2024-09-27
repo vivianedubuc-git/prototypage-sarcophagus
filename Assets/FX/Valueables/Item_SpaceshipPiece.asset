@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: Spaceship Piece
   _itemType: 1
+  _sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  _ATKBonus: 0
+  _ATKSpeedBonus: 0

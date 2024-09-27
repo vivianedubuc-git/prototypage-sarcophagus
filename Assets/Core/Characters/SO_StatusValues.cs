@@ -54,7 +54,9 @@ public class StatusValues : ScriptableObject
         get { return _ATKSpeed; }
         set { _ATKSpeed = value; }
     }
-    [SerializeField][Range(5, 10)] private int _inventoryCapacity;
+    [SerializeField][Range(5, 10)] private int _initialInventoryCapacity;
+    public int initialInventoryCapacity { get { return _initialInventoryCapacity; } }
+    private int _inventoryCapacity;
     public int inventoryCapacity
     {
         get { return _inventoryCapacity; }
@@ -63,9 +65,10 @@ public class StatusValues : ScriptableObject
 
     public void StartGame()
     {
-        HP = maxHP;
-        battery = maxBattery;
-        ATK = initialATK;
-        ATKSpeed = initialATKSpeed;
+        _HP = _maxHP;
+        _battery = _maxBattery;
+        _ATK = _initialATK;
+        _ATKSpeed = _initialATKSpeed;
+        _inventoryCapacity = _initialInventoryCapacity;
     }
 }
