@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2974056599421601468}
   - component: {fileID: 5143579318948426790}
   - component: {fileID: 2517524467144059041}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PR_NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8338170200493131595}
   - component: {fileID: 2708336761482451635}
   - component: {fileID: 2502451037116905654}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3834042800926561375}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4620335276316425930}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}

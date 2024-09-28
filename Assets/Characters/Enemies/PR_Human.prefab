@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6559597837759385771}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8358126704826883561}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8602395631603367820}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 7654580084846175023}
   - component: {fileID: 3738884859991038724}
   - component: {fileID: 3391763920904441437}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: PR_Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7168574070078340885}
   - component: {fileID: 6297234458201721235}
   - component: {fileID: 1047451448876311921}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,17 +16,17 @@ MonoBehaviour:
   lastSaveFormat: 0
   lastEncrypted: 0
   editorHelpLanguageTexts: {fileID: 0}
-  section: 3
-  subSection: 8
-  tabIndex: -1
-  scrollY: 180
+  section: 7
+  subSection: 5
+  tabIndex: 1
+  scrollY: 2914
   foldoutLimit: 
   helpDrag: 220
   subSectionDrag: 150
   tabListDrag: 200
   formulaDrag: 250
   schematicDrag: 400
-  jumpListDrag: 126
+  jumpListDrag: 50
   dataSelectionSorting: 0
   typeDataSelectionSorting: 0
   createBackup: 0
@@ -36,6 +36,7 @@ MonoBehaviour:
   updateScenes: 0
   sceneUpdate: 
   schematicAsset:
+  - {fileID: 11400000, guid: 91113559ba8afc64fbed4aaa877ff0c6, type: 2}
   - {fileID: 11400000, guid: 9847539f8b816074592a98e7e8f2357e, type: 2}
   dialogueImportSettings:
     name: 
