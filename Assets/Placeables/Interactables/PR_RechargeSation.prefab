@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2850120139997448814}
   - component: {fileID: 8453221997665677528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4630952218048941958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808577171514407737}
   - component: {fileID: 8838635086842189371}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 8069576975930421406}
   - component: {fileID: 2962317892527125618}
   - component: {fileID: 1658691243130309787}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PR_RechargeSation
   m_TagString: Untagged
   m_Icon: {fileID: 0}

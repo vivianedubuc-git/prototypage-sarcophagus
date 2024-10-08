@@ -16,7 +16,7 @@ public class SCR_Inventory : MonoBehaviour
 
     private void Start()
     {
-        AddStartEquipment(_equipment);
+        AddEquipment(_equipment);
     }
 
     private void Update()
@@ -27,10 +27,11 @@ public class SCR_Inventory : MonoBehaviour
         }
     }
 
-    private void AddStartEquipment(SO_Item equipment)
+    private void AddEquipment(SO_Item equipment)
     {
         if (equipment.itemType == ItemType.equipment)
         {
+            Debug.Log("Equipment added to inventory!");
             _equipment = equipment;
             _statusValues.ATK = _statusValues.initialATK;
             _statusValues.ATKSpeed = _statusValues.initialATKSpeed;
@@ -43,11 +44,12 @@ public class SCR_Inventory : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         SCR_Item SCR_Item = other.gameObject.GetComponent<SCR_Item>();
+        
         if (SCR_Item != null && lItems.Count < _statusValues.inventoryCapacity)
         {
             other.gameObject.SetActive(false);
             lItems.Add(SCR_Item);
-            AddStartEquipment(SCR_Item.item);
+            AddEquipment(SCR_Item.item);
         }
 
         SCR_NPC SCR_NPC = other.gameObject.GetComponent<SCR_NPC>();
