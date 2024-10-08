@@ -37,7 +37,7 @@ public class SCR_Inventory : MonoBehaviour
             _statusValues.ATKSpeed = _statusValues.initialATKSpeed;
             _statusValues.ATK += equipment.ATKBonus;
             _statusValues.ATKSpeed += equipment.ATKSpeedBonus;
-            GetComponentInChildren<SpriteRenderer>().sprite = equipment.sprite;
+            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = equipment.sprite;
         }
     }
 
@@ -47,7 +47,7 @@ public class SCR_Inventory : MonoBehaviour
         
         if (SCR_Item != null && lItems.Count < _statusValues.inventoryCapacity)
         {
-            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<SCR_Item>().AnimatePickUp();
             lItems.Add(SCR_Item);
             AddEquipment(SCR_Item.item);
         }
@@ -58,6 +58,7 @@ public class SCR_Inventory : MonoBehaviour
         {
             _NPC = SCR_NPC;
             _canInteract = true;
+            _NPC.interactionText.SetActive(_canInteract); 
         }
     }
 
@@ -68,6 +69,7 @@ public class SCR_Inventory : MonoBehaviour
         if (SCR_NPC != null)
         {
             _canInteract = false;
+            _NPC.interactionText.SetActive(_canInteract); 
         }
     }
 }
