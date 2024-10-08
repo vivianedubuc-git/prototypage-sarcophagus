@@ -16,7 +16,7 @@ public class SCR_NPC : MonoBehaviour
 
                 if(_totalSpaceshipPieces >= _goalSpaceshipPieces)
                 {
-                    Debug.Log("Win!");
+                    SCR_MapManager.instance.ChangeScene("Victory");
                 }
             }
         }

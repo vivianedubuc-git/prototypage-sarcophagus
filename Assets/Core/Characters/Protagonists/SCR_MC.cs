@@ -55,6 +55,6 @@ public class SCR_MC : SCR_Combatant
 
     private void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SCR_MapManager.instance.ChangeScene("Defeat");
     }
 }
