@@ -182,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2517524467144059041
 MonoBehaviour:
@@ -196,8 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14392e60115c0de4fad9f5912d5b97cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _retroactionText: {fileID: 1019262453964723641}
-  _interactionText: {fileID: 708404818587944200}
   _goalSpaceshipPieces: 3
 --- !u!1 &4456191711330649430
 GameObject:
@@ -275,7 +273,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 20e78b7dbf796574d9ff7aaa6d39f816, type: 3}
+  m_Sprite: {fileID: -1566119788, guid: 1041f330bb822ac4f8dc424bda53e96f, type: 3}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,7 +292,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456191711330649430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67f1ceb8212ea454e91e95ce01661f3c, type: 2}
   m_CullingMode: 0
@@ -363,7 +361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6834037921437030122
 GameObject:
@@ -533,11 +531,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc12ee6fe8213d748a7b6aaa899e85f3, type: 3}
---- !u!1 &708404818587944200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4725973224878712451, guid: fc12ee6fe8213d748a7b6aaa899e85f3, type: 3}
-  m_PrefabInstance: {fileID: 5206941780485546891}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2536994224509359028 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7743925506313171007, guid: fc12ee6fe8213d748a7b6aaa899e85f3, type: 3}
@@ -652,11 +645,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76939914d5921034ebb04fed3a65bb18, type: 3}
---- !u!1 &1019262453964723641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6606151305529976342, guid: 76939914d5921034ebb04fed3a65bb18, type: 3}
-  m_PrefabInstance: {fileID: 6163429328843256751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4954059341957379994 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1245453005721830453, guid: 76939914d5921034ebb04fed3a65bb18, type: 3}
