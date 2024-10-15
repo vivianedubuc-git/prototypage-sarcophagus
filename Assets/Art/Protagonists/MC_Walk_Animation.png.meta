@@ -101,7 +101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 43
         width: 40
         height: 40
       alignment: 0
@@ -122,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 0
+        y: 43
         width: 40
         height: 40
       alignment: 0
@@ -143,7 +143,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 43
         width: 40
         height: 40
       alignment: 0
@@ -164,7 +164,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 120
-        y: 0
+        y: 43
         width: 40
         height: 40
       alignment: 0
@@ -176,6 +176,90 @@ TextureImporter:
       bones: []
       spriteID: c8d772d9bde9b874a80a4911860c76bd
       internalID: -376804811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Walk_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c729c0e4add6ab34fbebc18719d71043
+      internalID: -903859780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Walk_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd68d7932f299c849b4a7b8cfebb86f9
+      internalID: 805609067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Walk_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cd86f80bc6c144ca6a91eba798919d
+      internalID: 21552814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Walk_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda172e5e6944ec4d9eef9b796826e7e
+      internalID: -900324899
       vertices: []
       indices: 
       edges: []
@@ -195,6 +279,10 @@ TextureImporter:
       MC_Walk_Animation_1: 772994739
       MC_Walk_Animation_2: 1660915997
       MC_Walk_Animation_3: -376804811
+      MC_Walk_Animation_4: -903859780
+      MC_Walk_Animation_5: 805609067
+      MC_Walk_Animation_6: 21552814
+      MC_Walk_Animation_7: -900324899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
