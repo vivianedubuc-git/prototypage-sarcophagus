@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14392e60115c0de4fad9f5912d5b97cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _retroactionText: {fileID: 0}
+  _interactionText: {fileID: 0}
   _goalSpaceshipPieces: 3
 --- !u!1 &4456191711330649430
 GameObject:
@@ -273,8 +275,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1566119788, guid: 1041f330bb822ac4f8dc424bda53e96f, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 1576144571, guid: 29f92f57c914af248a72355ad73778c3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -292,9 +294,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456191711330649430}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67f1ceb8212ea454e91e95ce01661f3c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1c0002b5dcbe2f541abbbb602bbc9d0d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
