@@ -5,7 +5,6 @@ using UnityEngine;
 public class SCR_RechargeStation : MonoBehaviour
 {
     private bool stationActivation;
-    private float rechargeValue = 500f;
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -13,11 +12,10 @@ public class SCR_RechargeStation : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         stationActivation = true;
         animator.SetBool("isRunning", true);
-
-
     }
 
     public void Interact(SCR_BatteryManager battery) { 
+        float rechargeValue = 500;
         if(stationActivation == true && battery.batteryAmount < battery.maxBatteryCapacity){
             battery.batteryAmount += rechargeValue;
             battery.batteryBar.fillAmount = battery.batteryAmount/1000f;

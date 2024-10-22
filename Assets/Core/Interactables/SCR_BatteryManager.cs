@@ -23,19 +23,25 @@ public class SCR_BatteryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _canInteract) {
             _rechargeStation.Interact(this);
-            Debug.Log(batteryAmount); 
-            UpdateBatteryStatus();
+            Debug.Log(batteryAmount);
+            UpdateBatteryStatus(); 
+            
         }
+        UpdateBatteryUI();
         // if (Input.GetKeyDown(KeyCode.P)) {
         //    UseBattery(250f); 
         // }
     }
     // public void UseBattery(int batteryUse){
     //     _statusValues.maxBattery -= batteryUse;
-    //     batteryBar.fillAmount = _statusValues.maxBattery/1000f;
+    //     // batteryBar.fillAmount = _statusValues.maxBattery/1000f;
     // }
     public void UpdateBatteryStatus(){
        _statusValues.maxBattery = (int)batteryAmount;
+    }
+    public void UpdateBatteryUI(){
+      batteryAmount = _statusValues.maxBattery;
+      batteryBar.fillAmount = _statusValues.maxBattery/1000f;
     }
     
 
