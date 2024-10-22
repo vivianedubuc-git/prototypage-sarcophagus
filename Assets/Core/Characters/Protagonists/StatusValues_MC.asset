@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StatusValues_MC
   m_EditorClassIdentifier: 
   _maxHP: 50
-  _maxBattery: 100
+  _maxBattery: 1000
   _initialATK: 10
   _DEF: 15
   _initialATKSpeed: 5

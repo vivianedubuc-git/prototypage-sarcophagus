@@ -15,7 +15,7 @@ public class StatusValues : ScriptableObject
             _HP = value;
         }
     }
-    [SerializeField][Range(100, 500)] private int _maxBattery;
+    [SerializeField][Range(100, 1000)] private int _maxBattery;
     public int maxBattery
     {
         get { return _maxBattery; }
