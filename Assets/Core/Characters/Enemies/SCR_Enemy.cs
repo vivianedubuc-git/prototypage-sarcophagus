@@ -31,7 +31,7 @@ public class SCR_Enemy : SCR_Combatant
     {
         Debug.Log("Enemy attacks!");
         _isAttacking = true;
-        yield return new WaitForSeconds(10 / _statusValues.ATKSpeed);
+        yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
     }
 
@@ -44,7 +44,7 @@ public class SCR_Enemy : SCR_Combatant
         Debug.Log("Enemy has " + _statusValues.HP + " HP left, enemy lost " + damage + " HP!");
         if (_statusValues.HP <= 0) Die();
         else if (_statusValues.HP < tempHP) AnimateDamage();
-        yield return new WaitForSeconds(10 / MC.ATKSpeed);
+        yield return new WaitForSeconds(MC.ATKSpeed);
         isBeingDamaged = false;
     }
 

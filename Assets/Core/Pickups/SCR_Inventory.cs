@@ -36,7 +36,7 @@ public class SCR_Inventory : MonoBehaviour
             _statusValues.ATK = _statusValues.initialATK;
             _statusValues.ATKSpeed = _statusValues.initialATKSpeed;
             _statusValues.ATK += equipment.ATKBonus;
-            _statusValues.ATKSpeed += equipment.ATKSpeedBonus;
+            _statusValues.ATKSpeed = equipment.ATKSpeed;
             gameObject.GetComponentInChildren<SpriteRenderer>().sprite = equipment.sprite;
         }
     }

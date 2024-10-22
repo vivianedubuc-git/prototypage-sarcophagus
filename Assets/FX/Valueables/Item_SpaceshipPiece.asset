@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Item_SpaceshipPiece
   m_EditorClassIdentifier: 
   _itemName: Spaceship Piece
+  _description: 1 of the 5 spaceship pieces you need to collect to repair your ship
   _itemType: 1
   _sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   _ATKBonus: 0
   _ATKSpeedBonus: 0
+  _batteryConsommation: 0
+  _inventorySpace: 1
