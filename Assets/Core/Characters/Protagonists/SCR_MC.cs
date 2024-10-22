@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SCR_MC : SCR_Combatant
 {
@@ -38,7 +37,7 @@ public class SCR_MC : SCR_Combatant
     {
         Debug.Log("MC attacks!");
         _isAttacking = true;
-        yield return new WaitForSeconds(10 / _statusValues.ATKSpeed);
+        yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
     }
 
@@ -51,7 +50,7 @@ public class SCR_MC : SCR_Combatant
         Debug.Log("MC has " + _statusValues.HP + " HP left, MC lost " + damage + " HP!");
         if (_statusValues.HP <= 0) animator.SetBool("Dead", true);
         else if (_statusValues.HP < tempHP) AnimateDamage();
-        yield return new WaitForSeconds(10 / enemy.ATKSpeed);
+        yield return new WaitForSeconds(enemy.ATKSpeed);
         isBeingDamaged = false;
     }
 }

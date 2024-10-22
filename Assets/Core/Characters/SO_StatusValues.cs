@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "StatusValues", fileName = "StatusValues")]
 public class StatusValues : ScriptableObject
 {
-    [SerializeField][Range(10, 50)] private int _maxHP;
+    [SerializeField][Range(1, 100)] private int _maxHP;
     public int maxHP { get { return _maxHP; } }
     private int _HP;
     public int HP
@@ -15,11 +15,17 @@ public class StatusValues : ScriptableObject
             _HP = value;
         }
     }
-    [SerializeField][Range(100, 500)] private int _maxBattery;
+    [SerializeField][Range(0, 2000)] private int _maxBattery;
     public int maxBattery
     {
         get { return _maxBattery; }
         set { _maxBattery = value; }
+    }
+    [SerializeField][Range(0, 1000)] private int _initialBattery;
+    public int initialBattery
+    {
+        get { return _initialBattery; }
+        set { _initialBattery = value; }
     }
     private int _battery;
     public int battery
@@ -32,7 +38,7 @@ public class StatusValues : ScriptableObject
             _battery = value;
         }
     }
-    [SerializeField][Range(10, 100)] private int _initialATK;
+    [SerializeField][Range(1, 100)] private int _initialATK;
     public int initialATK { get { return _initialATK; } }
     private int _ATK;
     public int ATK
@@ -40,21 +46,21 @@ public class StatusValues : ScriptableObject
         get { return _ATK; }
         set { _ATK = value; }
     }
-    [SerializeField][Range(15, 50)] private int _DEF;
+    [SerializeField][Range(1, 100)] private int _DEF;
     public int DEF
     {
         get { return _DEF; }
         set { _DEF = value; }
     }
-    [SerializeField][Range(5, 10)] private int _initialATKSpeed;
-    public int initialATKSpeed { get { return _initialATKSpeed; } }
-    private int _ATKSpeed;
-    public int ATKSpeed
+    [SerializeField][Range(1, 10)] private float _initialATKSpeed;
+    public float initialATKSpeed { get { return _initialATKSpeed; } }
+    private float _ATKSpeed;
+    public float ATKSpeed
     {
         get { return _ATKSpeed; }
         set { _ATKSpeed = value; }
     }
-    [SerializeField][Range(5, 10)] private int _initialInventoryCapacity;
+    [SerializeField][Range(0, 5)] private int _initialInventoryCapacity;
     public int initialInventoryCapacity { get { return _initialInventoryCapacity; } }
     private int _inventoryCapacity;
     public int inventoryCapacity
