@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14392e60115c0de4fad9f5912d5b97cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _retroactionText: {fileID: 0}
-  _interactionText: {fileID: 0}
+  _retroactionText: {fileID: 1019262453964723641}
+  _interactionText: {fileID: 708404818587944200}
   _goalSpaceshipPieces: 3
 --- !u!1 &4456191711330649430
 GameObject:
@@ -533,6 +533,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc12ee6fe8213d748a7b6aaa899e85f3, type: 3}
+--- !u!1 &708404818587944200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4725973224878712451, guid: fc12ee6fe8213d748a7b6aaa899e85f3, type: 3}
+  m_PrefabInstance: {fileID: 5206941780485546891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2536994224509359028 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7743925506313171007, guid: fc12ee6fe8213d748a7b6aaa899e85f3, type: 3}
@@ -647,6 +652,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76939914d5921034ebb04fed3a65bb18, type: 3}
+--- !u!1 &1019262453964723641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6606151305529976342, guid: 76939914d5921034ebb04fed3a65bb18, type: 3}
+  m_PrefabInstance: {fileID: 6163429328843256751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4954059341957379994 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1245453005721830453, guid: 76939914d5921034ebb04fed3a65bb18, type: 3}

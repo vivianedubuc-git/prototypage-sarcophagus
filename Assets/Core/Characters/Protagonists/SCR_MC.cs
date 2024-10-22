@@ -8,10 +8,12 @@ public class SCR_MC : SCR_Combatant
     public StatusValues statusValues { get { return _statusValues; } }
     private bool _isAttacking = false;
     public bool isAttacking { get { return _isAttacking; } }
+    Animator animator;
 
     private void Start()
     {
         _statusValues.StartGame();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -47,14 +49,9 @@ public class SCR_MC : SCR_Combatant
         int tempHP = _statusValues.HP;
         _statusValues.HP -= damage;
         Debug.Log("MC has " + _statusValues.HP + " HP left, MC lost " + damage + " HP!");
-        if (_statusValues.HP <= 0) Die();
+        if (_statusValues.HP <= 0) animator.SetBool("Dead", true);
         else if (_statusValues.HP < tempHP) AnimateDamage();
         yield return new WaitForSeconds(10 / enemy.ATKSpeed);
         isBeingDamaged = false;
-    }
-
-    private void Die()
-    {
-        SCR_MapManager.instance.ChangeScene("Defeat");
     }
 }
