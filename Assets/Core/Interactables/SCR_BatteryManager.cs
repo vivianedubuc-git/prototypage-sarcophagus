@@ -23,7 +23,6 @@ public class SCR_BatteryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _canInteract) {
             _rechargeStation.Interact(this);
-            Debug.Log(batteryAmount);
             UpdateBatteryStatus(); 
             
         }
