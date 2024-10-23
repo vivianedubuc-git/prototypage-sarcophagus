@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class SCR_RechargeStation : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class SCR_RechargeStation : MonoBehaviour
             rechargeCapacity = 0;
             stationActivation = false;
             animator.SetBool("isRunning", false);
-            
+            gameObject.GetComponentInChildren<Light2D>().intensity = 0f;
             Debug.Log("Replenishing battery");
             
         }else if(stationActivation == true && batterySpace < rechargeCapacity && battery._statusValues.battery != battery._statusValues.maxBattery){
