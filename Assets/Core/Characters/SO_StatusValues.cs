@@ -25,7 +25,6 @@ public class StatusValues : ScriptableObject
     public int initialBattery
     {
         get { return _initialBattery; }
-        set { _initialBattery = value; }
     }
     private int _battery;
     public int battery
@@ -72,7 +71,7 @@ public class StatusValues : ScriptableObject
     public void StartGame()
     {
         _HP = _maxHP;
-        _battery = _maxBattery;
+        _battery = _initialBattery;
         _ATK = _initialATK;
         _ATKSpeed = _initialATKSpeed;
         _inventoryCapacity = _initialInventoryCapacity;
