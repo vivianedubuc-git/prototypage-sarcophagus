@@ -26,7 +26,7 @@ public class StatusValues : ScriptableObject
     {
         get { return _initialBattery; }
     }
-    private int _battery;
+    [SerializeField]private int _battery;
     public int battery
     {
         get { return _battery; }

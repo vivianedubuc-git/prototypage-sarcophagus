@@ -16,22 +16,23 @@ public class SCR_RechargeStation : MonoBehaviour
 
     }
     public void Interact(SCR_BatteryManager battery) { 
-         float batterySpace = battery.maxBatteryCapacity - battery.batteryAmount;
+
+        float batterySpace = battery._statusValues.maxBattery - battery._statusValues.battery;
         if(stationActivation == true && batterySpace >= rechargeCapacity){
-            battery.batteryAmount += rechargeCapacity;
-            battery.batteryBar.fillAmount = battery.batteryAmount/1000f;
+            battery._statusValues.battery += (int)rechargeCapacity;
+            battery.batteryBar.fillAmount = (float)battery._statusValues.battery/(float)battery._statusValues.maxBattery;
             rechargeCapacity = 0;
             stationActivation = false;
             animator.SetBool("isRunning", false);
-            Debug.Log("Replenishing battery");
-            Debug.Log(battery.batteryAmount);
             
-        }else if(stationActivation == true && batterySpace < rechargeCapacity && battery.batteryAmount != battery.maxBatteryCapacity){
-           battery.batteryAmount += batterySpace;
-           battery.batteryBar.fillAmount = battery.batteryAmount/1000f;
-           rechargeCapacity -= batterySpace;
+            Debug.Log("Replenishing battery");
+            
+        }else if(stationActivation == true && batterySpace < rechargeCapacity && battery._statusValues.battery != battery._statusValues.maxBattery){
+           battery._statusValues.battery += (int)batterySpace;
+           battery.batteryBar.fillAmount = (float)battery._statusValues.battery/(float)battery._statusValues.maxBattery;
+           rechargeCapacity -= (int)batterySpace;
+
            Debug.Log("Replenishing full battery");
-           Debug.Log(battery.batteryAmount);
            Debug.Log("il reste " + rechargeCapacity + "pts à la station");
 
         }else if(stationActivation == false){

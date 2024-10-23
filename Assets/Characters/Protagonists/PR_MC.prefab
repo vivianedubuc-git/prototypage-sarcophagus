@@ -668,8 +668,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   batteryBar: {fileID: 3559206359076167765}
-  batteryAmount: 0
-  maxBatteryCapacity: 1000
 --- !u!1 &7192769869947671324
 GameObject:
   m_ObjectHideFlags: 0

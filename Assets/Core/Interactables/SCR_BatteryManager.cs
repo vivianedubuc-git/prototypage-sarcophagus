@@ -7,15 +7,15 @@ public class SCR_BatteryManager : MonoBehaviour
 {
     [SerializeField] public StatusValues _statusValues;
     public Image batteryBar;
-    public float batteryAmount;
-    public float maxBatteryCapacity = 1000f;
+    //public float batteryAmount;
+    //public float maxBatteryCapacity = 1000f;
     private bool _canInteract = false; 
     private SCR_RechargeStation _rechargeStation;
     // Start is called before the first frame update
     void Start()
     {
-        batteryAmount = _statusValues.maxBattery;
-        batteryBar.fillAmount = _statusValues.maxBattery/1000f;
+        //batteryAmount = _statusValues.battery;
+        batteryBar.fillAmount = (float)_statusValues.battery/(float)_statusValues.maxBattery;
     }
 
     // Update is called once per frame
@@ -23,24 +23,17 @@ public class SCR_BatteryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _canInteract) {
             _rechargeStation.Interact(this);
-            UpdateBatteryStatus(); 
-            
+            Debug.Log(_statusValues.battery);     
         }
-        UpdateBatteryUI();
-        // if (Input.GetKeyDown(KeyCode.P)) {
-        //    UseBattery(250f); 
-        // }
+        //UpdateBatteryUI();
+       
     }
-    // public void UseBattery(int batteryUse){
-    //     _statusValues.maxBattery -= batteryUse;
-    //     // batteryBar.fillAmount = _statusValues.maxBattery/1000f;
-    // }
-    public void UpdateBatteryStatus(){
-       _statusValues.maxBattery = (int)batteryAmount;
+    public void UseBattery(int batteryUse){
+       _statusValues.battery -= batteryUse;
+       batteryBar.fillAmount = (float)_statusValues.battery/(float)_statusValues.maxBattery;
     }
     public void UpdateBatteryUI(){
-      batteryAmount = _statusValues.maxBattery;
-      batteryBar.fillAmount = _statusValues.maxBattery/1000f;
+      batteryBar.fillAmount = (float)_statusValues.battery/(float)_statusValues.maxBattery;
     }
     
 
