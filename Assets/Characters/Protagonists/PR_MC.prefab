@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3608138213871193}
   - component: {fileID: 5032273825362090463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Central Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 2000830862580471347}
   - component: {fileID: 8817666794207787423}
   - component: {fileID: 6507242573190608943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Moving Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

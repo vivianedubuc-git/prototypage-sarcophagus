@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5936907625728201322}
   - component: {fileID: 235799248126680825}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Central Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

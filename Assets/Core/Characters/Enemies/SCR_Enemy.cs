@@ -5,12 +5,35 @@ public class SCR_Enemy : SCR_Combatant
 {
     [SerializeField] private StatusValues _statusValues;
     public StatusValues statusValues { get { return _statusValues; } }
+    private SpriteRenderer _spriteRenderer;
+    private Color _initialColor;
     private bool _isAttacking = false;
     public bool isAttacking { get { return _isAttacking; } }
+
+    private void Awake()
+    {
+        _spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+        _initialColor = new Color(_spriteRenderer.color.r, _spriteRenderer.color.b, _spriteRenderer.color.g, 1);
+        _spriteRenderer.color = new Color(_initialColor.r, _initialColor.b, _initialColor.g, 0);
+    }
 
     private void Start()
     {
         _statusValues.StartGame();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        SCR_Light SCR_Light = other.gameObject.GetComponent<SCR_Light>();
+
+        if (SCR_Light != null) _spriteRenderer.color = _initialColor;
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        SCR_Light SCR_Light = other.gameObject.GetComponent<SCR_Light>();
+
+        if (SCR_Light != null) _spriteRenderer.color = new Color(_initialColor.r, _initialColor.b, _initialColor.g, 0);
     }
 
     private void OnTriggerStay2D(Collider2D other)
