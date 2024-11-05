@@ -38,15 +38,20 @@ public class SCR_Enemy : SCR_Combatant
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
+        SCR_Light SCR_Light = other.gameObject.GetComponent<SCR_Light>();
 
-        if (SCR_MC != null && SCR_MC.isAttacking && !isBeingDamaged)
+        if (SCR_Light == null)
         {
-            StartCoroutine(CoroutineDamage(SCR_MC.statusValues));
-        }
-        if (SCR_MC != null && !isAttacking)
-        {
-            StartCoroutine(CoroutineAttack());
+            SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
+            
+            if (SCR_MC != null && SCR_MC.isAttacking && !isBeingDamaged)
+            {
+                StartCoroutine(CoroutineDamage(SCR_MC.statusValues));
+            }
+            if (SCR_MC != null && !isAttacking)
+            {
+                StartCoroutine(CoroutineAttack());
+            }
         }
     }
 
