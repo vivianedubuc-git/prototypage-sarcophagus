@@ -59,6 +59,8 @@ public class StatusValues : ScriptableObject
         get { return _ATKSpeed; }
         set { _ATKSpeed = value; }
     }
+    [SerializeField][Range(0, 10)] private float _invicibility;
+    public float invicibility { get { return _invicibility; } }
     [SerializeField][Range(0, 5)] private int _initialInventoryCapacity;
     public int initialInventoryCapacity { get { return _initialInventoryCapacity; } }
     private int _inventoryCapacity;

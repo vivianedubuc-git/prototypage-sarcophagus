@@ -138,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6119423917435065059}
+  m_Father: {fileID: 6986623861847082684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5032273825362090463
 MonoBehaviour:
@@ -548,8 +548,7 @@ Transform:
   m_Children:
   - {fileID: 6559597837759385771}
   - {fileID: 5321116856285272954}
-  - {fileID: 3608138213871193}
-  - {fileID: 8450619626341266087}
+  - {fileID: 6986623861847082684}
   - {fileID: 4768203043489563265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -668,6 +667,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   batteryBar: {fileID: 3559206359076167765}
+--- !u!1 &6919027897457795640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6986623861847082684}
+  m_Layer: 6
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6986623861847082684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919027897457795640}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3608138213871193}
+  - {fileID: 8450619626341266087}
+  m_Father: {fileID: 6119423917435065059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7192769869947671324
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +965,7 @@ GameObject:
   - component: {fileID: 8450619626341266087}
   - component: {fileID: 2000830862580471347}
   - component: {fileID: 8817666794207787423}
+  - component: {fileID: 6507242573190608943}
   m_Layer: 0
   m_Name: Moving Light
   m_TagString: Untagged
@@ -953,7 +986,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6119423917435065059}
+  m_Father: {fileID: 6986623861847082684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2000830862580471347
 MonoBehaviour:
@@ -991,8 +1024,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 45
-  m_PointLightOuterAngle: 90
+  m_PointLightInnerAngle: 91.4067
+  m_PointLightOuterAngle: 136.40671
   m_PointLightInnerRadius: 5
   m_PointLightOuterRadius: 10
   m_ShapeLightParametricSides: 5
@@ -1018,3 +1051,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 8450619626341266087}
+--- !u!60 &6507242573190608943
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890135923842039565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 10.027048}
+      - {x: -7.1607456, y: 7.03618}
+      - {x: -9.241101, y: 3.733255}
+      - {x: -0.020698428, y: -0.004057884}
+      - {x: 9.298598, y: 3.7332556}
+      - {x: 7.1607447, y: 6.9786835}
+  m_UseDelaunayMesh: 0

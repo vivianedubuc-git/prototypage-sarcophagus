@@ -48,10 +48,10 @@ public class SCR_MC : SCR_Combatant
         int tempHP = _statusValues.HP;
         if(_statusValues.battery <= 0)  _statusValues.HP -= damage;
         else  gameObject.GetComponent<SCR_BatteryManager>().UseBattery(damage);
-        Debug.Log("MC has " + _statusValues.HP + " HP left, MC lost " + damage + " HP!");
+        Debug.Log("MC has " + _statusValues.battery + " battery left, MC lost " + damage + " HP!");
         if (_statusValues.HP <= 0) animator.SetBool("Dead", true);
-        else if (_statusValues.HP < tempHP) AnimateDamage();
-        yield return new WaitForSeconds(enemy.ATKSpeed);
+        else if (_statusValues.battery < _statusValues.maxBattery) AnimateDamage();
+        yield return new WaitForSeconds(_statusValues.invicibility);
         isBeingDamaged = false;
     }
 }
