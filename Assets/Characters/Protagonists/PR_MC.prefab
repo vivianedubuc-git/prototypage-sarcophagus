@@ -652,6 +652,7 @@ MonoBehaviour:
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   _lItems:
   - {fileID: 162044590896951291, guid: bea0ad38dd2f8004ea88b2437366576b, type: 3}
+  _lightCollider: {fileID: 6507242573190608943}
   _equipment: {fileID: 11400000, guid: d18dfd1deddfec44ca5130b181757b1c, type: 2}
 --- !u!114 &5280227395051378306
 MonoBehaviour:
@@ -666,6 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
+  _lightCollider: {fileID: 6507242573190608943}
   batteryBar: {fileID: 3559206359076167765}
 --- !u!1 &6919027897457795640
 GameObject:
@@ -1024,8 +1026,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 91.4067
-  m_PointLightOuterAngle: 136.40671
+  m_PointLightInnerAngle: 75
+  m_PointLightOuterAngle: 120
   m_PointLightInnerRadius: 5
   m_PointLightOuterRadius: 10
   m_ShapeLightParametricSides: 5
@@ -1096,9 +1098,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 10.027048}
-      - {x: -7.1607456, y: 7.03618}
-      - {x: -9.241101, y: 3.733255}
+      - {x: -6.1303787, y: 8.01503}
+      - {x: -8.64864, y: 5.021214}
       - {x: -0.020698428, y: -0.004057884}
-      - {x: 9.298598, y: 3.7332556}
-      - {x: 7.1607447, y: 6.9786835}
+      - {x: 8.603101, y: 4.9954557}
+      - {x: 6.1303773, y: 7.9317727}
   m_UseDelaunayMesh: 0
