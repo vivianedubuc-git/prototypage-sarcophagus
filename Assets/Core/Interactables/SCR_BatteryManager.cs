@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SCR_BatteryManager : MonoBehaviour
 {
     [SerializeField] public StatusValues _statusValues;
+    [SerializeField] private Collider2D _lightCollider;
     public Image batteryBar;
     //public float batteryAmount;
     //public float maxBatteryCapacity = 1000f;
@@ -40,8 +41,8 @@ public class SCR_BatteryManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
 
         SCR_RechargeStation SCR_RechargeStation = other.gameObject.GetComponent<SCR_RechargeStation>();
-
         if (SCR_RechargeStation != null) {
+            Physics2D.IgnoreCollision(_lightCollider, other);
             _rechargeStation = SCR_RechargeStation;
             _canInteract = true;
         }
