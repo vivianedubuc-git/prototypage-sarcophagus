@@ -42,15 +42,23 @@ public class SCR_Enemy : SCR_Combatant
 
         if (SCR_Light == null)
         {
-            SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
-            
-            if (SCR_MC != null && SCR_MC.isAttacking && !isBeingDamaged)
+            SCR_Pause SCR_Pause = other.gameObject.GetComponentInChildren<SCR_Pause>();
+
+            if (SCR_Pause != null)
             {
-                StartCoroutine(CoroutineDamage(SCR_MC.statusValues));
-            }
-            if (SCR_MC != null && !isAttacking)
-            {
-                StartCoroutine(CoroutineAttack());
+                if (!SCR_Pause.isPaused)
+                {
+                    SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
+
+                    if (SCR_MC != null && SCR_MC.isAttacking && !isBeingDamaged)
+                    {
+                        StartCoroutine(CoroutineDamage(SCR_MC.statusValues));
+                    }
+                    if (SCR_MC != null && !isAttacking)
+                    {
+                        StartCoroutine(CoroutineAttack());
+                    }
+                }
             }
         }
     }

@@ -9,8 +9,8 @@ public class SCR_NPC : MonoBehaviour
     [SerializeField] private int _goalSpaceshipPieces;
     private int _totalSpaceshipPieces = 0;
     private int _waitTime = 3;
-    private string _hasPieceText = "Thank you!";
-    private string _hasNoPieceText = "You have nothing for me!";
+    private string _hasPieceText = "Thank you for the spaceship piece";
+    private string _hasNoPieceText = "Well? Time to go find these spaceship pieces!";
     private TextMeshProUGUI _textRetroaction;
 
     private void Start()
@@ -20,13 +20,13 @@ public class SCR_NPC : MonoBehaviour
 
     public void Interact(SCR_Inventory inventory)
     {
-        bool hasPiece = false;
+        int hasPiece = 0;
 
         for (int i = inventory.lItems.Count - 1; i >= 0; i--)
         {
             if (inventory.lItems[i].item.itemType == ItemType.valueables)
             {
-                hasPiece = true;
+                hasPiece++;
                 _totalSpaceshipPieces++;
                 inventory.lItems.RemoveAt(i);
 
@@ -37,9 +37,13 @@ public class SCR_NPC : MonoBehaviour
             }
         }
 
-        if (hasPiece)
+        if (hasPiece > 1)
         {
-            _textRetroaction.text = _hasPieceText;
+            _textRetroaction.text = _hasPieceText + "s!";
+        }
+        else if (hasPiece > 0)
+        {
+            _textRetroaction.text = _hasPieceText + "!";
         }
         else
         {

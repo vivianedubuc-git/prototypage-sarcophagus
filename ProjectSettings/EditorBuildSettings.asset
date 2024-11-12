@@ -9,26 +9,17 @@ EditorBuildSettings:
     path: Assets/Maps/Menu.unity
     guid: 766981da949e4db4280c6773ac6c075b
   - enabled: 1
+    path: Assets/Maps/Situation.unity
+    guid: 9d69a5b4929d93643b99fb63e00243a5
+  - enabled: 1
     path: Assets/Maps/Game.unity
     guid: 0401ec93b966c3842addab12c5af3f1d
   - enabled: 1
-    path: Assets/Maps/GymChungus.unity
-    guid: 63a320a1d19565c499a5bb5ea1d27044
-  - enabled: 1
-    path: Assets/Maps/GymJulien.unity
-    guid: caed8ed7b6a8fa148b063aed7d3a3a54
-  - enabled: 1
-    path: Assets/Maps/GymTimothee.unity
-    guid: 8eed5f20977f8f148b05d566cebd34f3
-  - enabled: 1
-    path: Assets/Maps/GymViviane.unity
-    guid: f5bd88bb39b036745b2ba5a29df80e21
+    path: Assets/Maps/Defeat.unity
+    guid: 25b66586a909bef409a659cbe1f03c1f
   - enabled: 1
     path: Assets/Maps/Victory.unity
     guid: ef9fd4b581c58774aade311f8991b8b0
-  - enabled: 1
-    path: Assets/Maps/Defeat.unity
-    guid: 25b66586a909bef409a659cbe1f03c1f
   - enabled: 1
     path: Assets/Maps/Credits.unity
     guid: dcb91e5ca883e0641a0f694a4d99be2b

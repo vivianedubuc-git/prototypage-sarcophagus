@@ -12,17 +12,19 @@ public class SCR_Inventory : MonoBehaviour
         set { _lItems = value; }
     }
     [SerializeField] private SO_Item _equipment;
+    private SCR_Pause _pause;
     private bool _canInteract = false;
     private SCR_NPC _NPC;
 
     private void Start()
     {
         AddEquipment(_equipment);
+        _pause = GetComponentInChildren<SCR_Pause>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _canInteract)
+        if (Input.GetKeyDown(KeyCode.F) && _canInteract && !_pause.isPaused)
         {
             _NPC.Interact(this);
         }

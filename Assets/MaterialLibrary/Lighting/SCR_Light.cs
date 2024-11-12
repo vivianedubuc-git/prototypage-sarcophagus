@@ -4,6 +4,7 @@ using UnityEngine.Rendering.Universal;
 public class SCR_Light : MonoBehaviour
 {
     [SerializeField] private Transform _target;
+    [SerializeField] private SCR_Pause _pause;
     private Light2D _light;
     private StatusValues _statusValues;
     private Vector3 _mousePos;
@@ -18,7 +19,7 @@ public class SCR_Light : MonoBehaviour
 
     void Update()
     {
-        if (_statusValues.battery > 0)
+        if (_statusValues.battery > 0 && !_pause.isPaused)
         {
             _light.enabled = true;
             _mousePos = Input.mousePosition;

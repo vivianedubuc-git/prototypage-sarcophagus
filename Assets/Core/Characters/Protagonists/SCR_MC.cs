@@ -5,6 +5,7 @@ public class SCR_MC : SCR_Combatant
 {
     [SerializeField] private StatusValues _statusValues;
     public StatusValues statusValues { get { return _statusValues; } }
+    private SCR_Pause _pause;
     private bool _isAttacking = false;
     public bool isAttacking { get { return _isAttacking; } }
     private float _speed = 0;
@@ -18,13 +19,14 @@ public class SCR_MC : SCR_Combatant
         _statusValues.StartGame();
         animator = GetComponentInChildren<Animator>();
         _rb = GetComponent<Rigidbody2D>();
+        _pause = GetComponentInChildren<SCR_Pause>();
     }
 
     private void Update()
     {
         _moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _moveVector = _moveVector.normalized;
-        if (_moveVector.magnitude != 0)
+        if (_moveVector.magnitude != 0 && !_pause.isPaused)
         {
             animator.SetFloat("Direction", _moveVector.x);
             animator.SetFloat("Speed", _speed);
@@ -34,7 +36,7 @@ public class SCR_MC : SCR_Combatant
         if(Input.GetButton("Sprint")) _speed = _statusValues.speed * _speedMultiply;
         else _speed = _statusValues.speed;
 
-        if (Input.GetMouseButtonDown(0) && !_isAttacking)
+        if (Input.GetMouseButtonDown(0) && !_isAttacking && !_pause.isPaused)
         {
             StartCoroutine(CoroutineAttack());
         }
