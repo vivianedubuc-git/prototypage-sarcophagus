@@ -1,10 +1,9 @@
-using GamingIsLove.ORKFramework;
 using UnityEngine;
 
 public class SCR_SpriteMC : MonoBehaviour
 {
     public void Die()
     {
-        ORK.Game.GameOver();
+        SCR_MapManager.instance.ChangeScene("Defeat");
     }
 }

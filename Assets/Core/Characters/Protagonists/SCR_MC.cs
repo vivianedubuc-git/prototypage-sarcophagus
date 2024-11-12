@@ -7,20 +7,42 @@ public class SCR_MC : SCR_Combatant
     public StatusValues statusValues { get { return _statusValues; } }
     private bool _isAttacking = false;
     public bool isAttacking { get { return _isAttacking; } }
+    private float _speed = 0;
+    private float _speedMultiply = 2;
     Animator animator;
+    private Rigidbody2D _rb;
+    private Vector2 _moveVector;
 
     private void Start()
     {
         _statusValues.StartGame();
         animator = GetComponentInChildren<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        _moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _moveVector = _moveVector.normalized;
+        if (_moveVector.magnitude != 0)
+        {
+            animator.SetFloat("Direction", _moveVector.x);
+            animator.SetFloat("Speed", _speed);
+        }
+        else animator.SetFloat("Speed", 0);
+
+        if(Input.GetButton("Sprint")) _speed = _statusValues.speed * _speedMultiply;
+        else _speed = _statusValues.speed;
+
         if (Input.GetMouseButtonDown(0) && !_isAttacking)
         {
             StartCoroutine(CoroutineAttack());
         }
+    }
+
+    private void FixedUpdate()
+    {
+        _rb.MovePosition(_rb.position + _moveVector * _speed * Time.fixedDeltaTime);
     }
 
     void OnTriggerStay2D(Collider2D other)

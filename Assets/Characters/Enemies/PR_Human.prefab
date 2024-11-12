@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 5321116856285272954}
   - component: {fileID: 7168574070078340885}
   - component: {fileID: 6297234458201721235}
-  - component: {fileID: 1047451448876311921}
   - component: {fileID: 5402709971620568297}
   m_Layer: 7
   m_Name: Sprite
@@ -296,19 +295,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1047451448876311921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7535091082579785246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 143593808, guid: bfb06eec059d3a345ac43927a4389437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  makinomCamera: 1
 --- !u!61 &5402709971620568297
 BoxCollider2D:
   m_ObjectHideFlags: 0

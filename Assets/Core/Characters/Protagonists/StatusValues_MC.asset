@@ -15,9 +15,10 @@ MonoBehaviour:
   _maxHP: 100
   _maxBattery: 1000
   _initialBattery: 1000
-  _battery: 200
+  _battery: 1000
   _initialATK: 20
   _DEF: 100
+  _initialSpeed: 3
   _initialATKSpeed: 1
   _invicibility: 0.5
   _initialInventoryCapacity: 0

@@ -51,6 +51,14 @@ public class StatusValues : ScriptableObject
         get { return _DEF; }
         set { _DEF = value; }
     }
+    [SerializeField][Range(1, 10)] private float _initialSpeed;
+    public float initialSpeed { get { return _initialSpeed; } }
+    private float _speed;
+    public float speed
+    {
+        get { return _speed; }
+        set { _speed = value; }
+    }
     [SerializeField][Range(1, 10)] private float _initialATKSpeed;
     public float initialATKSpeed { get { return _initialATKSpeed; } }
     private float _ATKSpeed;
@@ -75,6 +83,7 @@ public class StatusValues : ScriptableObject
         _HP = _maxHP;
         _battery = _initialBattery;
         _ATK = _initialATK;
+        _speed = _initialSpeed;
         _ATKSpeed = _initialATKSpeed;
         _inventoryCapacity = _initialInventoryCapacity;
     }
