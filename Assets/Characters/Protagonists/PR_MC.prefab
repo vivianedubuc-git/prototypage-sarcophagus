@@ -1026,8 +1026,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 75
-  m_PointLightOuterAngle: 120
+  m_PointLightInnerAngle: 62.41699
+  m_PointLightOuterAngle: 107.41699
   m_PointLightInnerRadius: 5
   m_PointLightOuterRadius: 10
   m_ShapeLightParametricSides: 5
@@ -1098,9 +1098,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 10.027048}
-      - {x: -6.1303787, y: 8.01503}
-      - {x: -8.64864, y: 5.021214}
+      - {x: -5.1811714, y: 8.537094}
+      - {x: -8.079115, y: 5.994151}
       - {x: -0.020698428, y: -0.004057884}
-      - {x: 8.603101, y: 4.9954557}
-      - {x: 6.1303773, y: 7.9317727}
+      - {x: 8.033577, y: 5.9446626}
+      - {x: 5.1574397, y: 8.548758}
   m_UseDelaunayMesh: 0
