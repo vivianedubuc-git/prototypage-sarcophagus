@@ -36227,6 +36227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PR_NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 5304428568417925743, guid: c79076e80eac4ab4b8388f7286d8d17b, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5934455343205706861, guid: c79076e80eac4ab4b8388f7286d8d17b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.466
