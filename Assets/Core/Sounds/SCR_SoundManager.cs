@@ -29,7 +29,7 @@ public class SCR_SoundManager : MonoBehaviour
     void CreateAudioSources()
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
-        music.InstantiateAudioSource(source);
+        if (music.clip != null) music.InstantiateAudioSource(source);
     }
 
     public void PlaySound(AudioClip clip)
