@@ -21,4 +21,4 @@ MonoBehaviour:
   _initialSpeed: 3
   _initialATKSpeed: 1
   _invicibility: 0.5
-  _initialInventoryCapacity: 0
+  _initialInventoryCapacity: 5
