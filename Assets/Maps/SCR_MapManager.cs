@@ -22,9 +22,15 @@ public class SCR_MapManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public string GetSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
+
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
+        SCR_SoundManager.instance.music.AdjustVolume();
     }
 
     private void AnimateOpening()
