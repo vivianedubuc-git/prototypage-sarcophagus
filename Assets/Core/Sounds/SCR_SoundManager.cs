@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SCR_SoundManager : MonoBehaviour
@@ -16,7 +14,7 @@ public class SCR_SoundManager : MonoBehaviour
     static SCR_SoundManager _instance;
     static public SCR_SoundManager instance => _instance;
 
-    void Awake()
+    void Start()
     {
         if (_instance == null) _instance = this;
         else { Destroy(gameObject); return; }

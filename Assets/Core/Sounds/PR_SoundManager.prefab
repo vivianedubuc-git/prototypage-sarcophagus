@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _music: {fileID: 11400000, guid: 32a5d3f0ea507f147a58c6df0c484777, type: 2}
-  _soundButton: {fileID: 0}
-  _soundClic: {fileID: 0}
+  _soundButton: {fileID: 8300000, guid: 76f66fae8c3830f4bae942f5e3587dab, type: 3}
+  _soundClic: {fileID: 8300000, guid: 6757c869ea1b2b74abbfa8894901ae45, type: 3}

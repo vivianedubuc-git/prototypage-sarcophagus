@@ -20,6 +20,7 @@ public class SCR_Pause : MonoBehaviour
         {
             _isPaused = !_isPaused;
             _pauseMenu.SetActive(_isPaused);
+            SCR_SoundManager.instance.PlaySound(SCR_SoundManager.instance.soundClic);
 
             if (_isPaused)
             {

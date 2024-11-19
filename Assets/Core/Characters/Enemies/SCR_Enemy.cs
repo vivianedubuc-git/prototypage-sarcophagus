@@ -5,6 +5,8 @@ public class SCR_Enemy : SCR_Combatant
 {
     [SerializeField] private StatusValues _statusValues;
     public StatusValues statusValues { get { return _statusValues; } }
+    [SerializeField] private AudioClip _soundAttack;
+    [SerializeField] private AudioClip _soundDamage;
     private SpriteRenderer _spriteRenderer;
     private Color _initialColor;
     private bool _isAttacking = false;
@@ -67,6 +69,7 @@ public class SCR_Enemy : SCR_Combatant
     {
         Debug.Log("Enemy attacks!");
         _isAttacking = true;
+        // SCR_SoundManager.instance.PlaySound(_soundAttack);
         yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
     }
@@ -80,6 +83,7 @@ public class SCR_Enemy : SCR_Combatant
         Debug.Log("Enemy has " + _statusValues.HP + " HP left, enemy lost " + damage + " HP!");
         if (_statusValues.HP <= 0) Die();
         else if (_statusValues.HP < tempHP) AnimateDamage();
+        // SCR_SoundManager.instance.PlaySound(_soundDamage);
         yield return new WaitForSeconds(MC.ATKSpeed);
         isBeingDamaged = false;
     }

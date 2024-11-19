@@ -5,6 +5,8 @@ public class SCR_MC : SCR_Combatant
 {
     [SerializeField] private StatusValues _statusValues;
     public StatusValues statusValues { get { return _statusValues; } }
+    [SerializeField] private AudioClip _soundAttack;
+    [SerializeField] private AudioClip _soundDamage;
     private SCR_Pause _pause;
     private bool _isAttacking = false;
     public bool isSprinting = false;
@@ -77,6 +79,7 @@ public class SCR_MC : SCR_Combatant
     {
         Debug.Log("MC attacks!");
         _isAttacking = true;
+        // SCR_SoundManager.instance.PlaySound(_soundAttack);
         yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
     }
@@ -91,6 +94,7 @@ public class SCR_MC : SCR_Combatant
         Debug.Log("MC has " + _statusValues.battery + " battery left, MC lost " + damage + " HP!");
         if (_statusValues.HP <= 0) animator.SetBool("Dead", true);
         else if (_statusValues.battery < _statusValues.maxBattery) AnimateDamage();
+        // SCR_SoundManager.instance.PlaySound(_soundDamage);
         yield return new WaitForSeconds(_statusValues.invicibility);
         isBeingDamaged = false;
     }
