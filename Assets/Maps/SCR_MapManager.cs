@@ -22,15 +22,22 @@ public class SCR_MapManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public string GetSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
+
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
+        if (SCR_SoundManager.instance.music.clip != null) SCR_SoundManager.instance.music.AdjustVolume();
     }
 
     private void AnimateOpening()
     {
         if (_fadeIn != null)
         {
+            _fadeIn.gameObject.SetActive(true);
             StartCoroutine("CoroutineAnimateOpening");
         }
     }
@@ -38,7 +45,7 @@ public class SCR_MapManager : MonoBehaviour
     private IEnumerator CoroutineAnimateOpening()
     {
         float time = 0;
-        Color initialColor = _fadeIn.color;
+        Color initialColor = new Color(_fadeIn.color.r, _fadeIn.color.g, _fadeIn.color.b, 1);
         while (time < _animationDuration)
         {
             Vector4 color = Vector4.Lerp(initialColor, new Color(0, 0, 0, 0), (time / _animationDuration));

@@ -10,6 +10,7 @@ public class SCR_Light : MonoBehaviour
     private Vector3 _mousePos;
     private Vector3 _objectPos;
     private float _angle;
+    private int _distanceMin = 20;
 
     private void Start()
     {
@@ -26,8 +27,12 @@ public class SCR_Light : MonoBehaviour
             _objectPos = Camera.main.WorldToScreenPoint(_target.position);
             _mousePos.x = _mousePos.x - _objectPos.x;
             _mousePos.y = _mousePos.y - _objectPos.y;
-            _angle = Mathf.Atan2(_mousePos.y, _mousePos.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, _angle - 90);
+            if (_mousePos.x < -_distanceMin || _mousePos.x > _distanceMin) {
+                if (_mousePos.y < -_distanceMin || _mousePos.y > _distanceMin) {
+                    _angle = Mathf.Atan2(_mousePos.y, _mousePos.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0, 0, _angle - 90);
+                }
+            }
         }
         else
         {
