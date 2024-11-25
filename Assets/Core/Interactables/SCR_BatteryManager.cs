@@ -11,6 +11,7 @@ public class SCR_BatteryManager : MonoBehaviour
     public Image batteryBar;
     private bool _canInteract = false; 
     private SCR_RechargeStation _rechargeStation;
+    private SCR_Door _door;
     [SerializeField] private SCR_MC _mc;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class SCR_BatteryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _canInteract) {
             _rechargeStation.Interact(this);
+            _door.Interact(this);
             Debug.Log(_statusValues.battery);     
         }
         if(_mc.isSprinting){
@@ -54,12 +56,19 @@ public class SCR_BatteryManager : MonoBehaviour
             _rechargeStation = SCR_RechargeStation;
             _canInteract = true;
         }
+        
+        SCR_Door SCR_Door = other.gameObject.GetComponent<SCR_Door>();
+        if (SCR_Door != null) {
+            Physics2D.IgnoreCollision(_lightCollider, other);
+            _door = SCR_Door;
+            _canInteract = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        SCR_RechargeStation SCR_RechargeStation = other.gameObject.GetComponent<SCR_RechargeStation>(); ;
+        SCR_Door SCR_Door = other.gameObject.GetComponent<SCR_Door>();
 
-        if (SCR_RechargeStation != null) {
+        if (SCR_Door != null) {
             _canInteract = false;
         }
     }
