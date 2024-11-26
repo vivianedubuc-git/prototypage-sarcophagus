@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 246759653230212277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 6119423917435065059}
   - component: {fileID: 7654580084846175023}
   - component: {fileID: 3391763920904441437}
+  - component: {fileID: 3344940713068053922}
   m_Layer: 7
   m_Name: PR_Human
   m_TagString: Untagged
@@ -162,7 +163,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,6 +189,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: c10f1b3c26a543842a835845c1d9fbe0, type: 2}
+  _soundAttack: {fileID: 0}
+  _soundDamage: {fileID: 0}
+--- !u!195 &3344940713068053922
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095122552518032878}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7535091082579785246
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 7535091082579785246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -282,9 +307,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7535091082579785246}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67f1ceb8212ea454e91e95ce01661f3c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 95cc7e5891da6144d81b3956dae26565, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

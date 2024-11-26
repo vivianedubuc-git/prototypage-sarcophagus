@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SCR_Enemy : SCR_Combatant
 {
@@ -7,36 +8,56 @@ public class SCR_Enemy : SCR_Combatant
     public StatusValues statusValues { get { return _statusValues; } }
     [SerializeField] private AudioClip _soundAttack;
     [SerializeField] private AudioClip _soundDamage;
+    private Transform _target;
+    private NavMeshAgent _agent;
+    private Animator _animator;
     private bool _isAttacking = false;
     public bool isAttacking { get { return _isAttacking; } }
 
     private void Start()
     {
+        _animator = GetComponentInChildren<Animator>();
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
         _statusValues.StartGame();
+    }
+
+    private void Update()
+    {
+        if (_target != null)
+        {
+            _agent.SetDestination(_target.position);
+            _animator.SetFloat("Speed", 1);
+            if (_target.position.x < transform.position.x) _animator.SetFloat("Direction", 1);
+            else _animator.SetFloat("Direction", -1);
+        }
+        else
+        {
+            _animator.SetFloat("Speed", 0);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        SCR_Light SCR_Light = other.gameObject.GetComponent<SCR_Light>();
+        SCR_SpriteMC SCR_SpriteMC = other.gameObject.GetComponent<SCR_SpriteMC>();
+        if(SCR_SpriteMC != null) _target = SCR_SpriteMC.gameObject.GetComponent<Transform>();
 
-        if (SCR_Light == null)
+        SCR_Pause SCR_Pause = other.gameObject.GetComponentInChildren<SCR_Pause>();
+        if (SCR_Pause != null)
         {
-            SCR_Pause SCR_Pause = other.gameObject.GetComponentInChildren<SCR_Pause>();
-
-            if (SCR_Pause != null)
+            if (!SCR_Pause.isPaused)
             {
-                if (!SCR_Pause.isPaused)
-                {
-                    SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
+                SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
 
-                    if (SCR_MC != null && SCR_MC.isAttacking && !isBeingDamaged)
-                    {
-                        StartCoroutine(CoroutineDamage(SCR_MC.statusValues));
-                    }
-                    if (SCR_MC != null && !isAttacking)
-                    {
-                        StartCoroutine(CoroutineAttack());
-                    }
+                if (SCR_MC != null && SCR_MC.isAttacking && !isBeingDamaged)
+                {
+                    StartCoroutine(CoroutineDamage(SCR_MC.statusValues));
+                    _target = null;
+                }
+                if (SCR_MC != null && !isAttacking)
+                {
+                    StartCoroutine(CoroutineAttack());
                 }
             }
         }
