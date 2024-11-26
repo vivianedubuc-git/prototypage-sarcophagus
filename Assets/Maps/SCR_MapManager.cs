@@ -56,7 +56,7 @@ public class SCR_MapManager : MonoBehaviour
         _fadeIn.gameObject.SetActive(false);
     }
 
-    public void Quit()
+    public void QuitGame()
     {
         Application.Quit();
 #if (UNITY_EDITOR)

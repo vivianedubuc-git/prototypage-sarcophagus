@@ -32,5 +32,6 @@ public class SCR_Item : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
+        gameObject.SetActive(false);
     }
 }
