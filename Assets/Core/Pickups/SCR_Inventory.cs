@@ -5,7 +5,6 @@ public class SCR_Inventory : MonoBehaviour
 {
     [SerializeField] private StatusValues _statusValues;
     [SerializeField] private List<SCR_Item> _lItems;
-    [SerializeField] private Collider2D _lightCollider;
     public List<SCR_Item> lItems
     {
         get { return _lItems; }
@@ -59,7 +58,6 @@ public class SCR_Inventory : MonoBehaviour
 
         if (SCR_NPC != null)
         {
-            Physics2D.IgnoreCollision(_lightCollider, other);
             _NPC = SCR_NPC;
             _canInteract = true;
             _NPC.interactionText.SetActive(_canInteract);

@@ -1570,6 +1570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
+  _soundAttack: {fileID: 0}
+  _soundDamage: {fileID: 0}
   isSprinting: 0
 --- !u!114 &8643177342908031960
 MonoBehaviour:
@@ -1586,7 +1588,7 @@ MonoBehaviour:
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   _lItems:
   - {fileID: 162044590896951291, guid: bea0ad38dd2f8004ea88b2437366576b, type: 3}
-  _lightCollider: {fileID: 6507242573190608943}
+  _lightCollider: {fileID: 0}
   _equipment: {fileID: 11400000, guid: d18dfd1deddfec44ca5130b181757b1c, type: 2}
 --- !u!114 &5280227395051378306
 MonoBehaviour:
@@ -1601,7 +1603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
-  _lightCollider: {fileID: 6507242573190608943}
+  _lightCollider: {fileID: 0}
   batteryBar: {fileID: 3559206359076167765}
   _mc: {fileID: 3417432873165472747}
 --- !u!1 &6919027897457795640
@@ -2149,7 +2151,6 @@ GameObject:
   - component: {fileID: 8450619626341266087}
   - component: {fileID: 2000830862580471347}
   - component: {fileID: 8817666794207787423}
-  - component: {fileID: 6507242573190608943}
   m_Layer: 6
   m_Name: Moving Light
   m_TagString: Untagged
@@ -2236,57 +2237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8450619626341266087}
   _pause: {fileID: 6638202450965250888}
---- !u!60 &6507242573190608943
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8890135923842039565}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 10.027048}
-      - {x: -5.1811714, y: 8.537094}
-      - {x: -8.079115, y: 5.994151}
-      - {x: -0.020698428, y: -0.004057884}
-      - {x: 8.033577, y: 5.9446626}
-      - {x: 5.1574397, y: 8.548758}
-  m_UseDelaunayMesh: 0
 --- !u!1001 &1862961921548933129
 PrefabInstance:
   m_ObjectHideFlags: 0

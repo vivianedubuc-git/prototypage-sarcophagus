@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class SCR_BatteryManager : MonoBehaviour
 {
     [SerializeField] public StatusValues _statusValues;
-    [SerializeField] private Collider2D _lightCollider;
     private Coroutine _coroutineSprint = null;
     public Image batteryBar;
     private bool _canInteract = false; 
@@ -24,9 +23,14 @@ public class SCR_BatteryManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && _canInteract) {
-            _rechargeStation.Interact(this);
-            _door.Interact(this);
-            Debug.Log(_statusValues.battery);     
+            if (_rechargeStation != null) 
+            { 
+                 _rechargeStation.Interact(this); 
+            } 
+            if (_door != null) 
+            { 
+                 _door.Interact(this); 
+            }      
         }
         if(_mc.isSprinting){
             if (_coroutineSprint == null)
@@ -52,14 +56,12 @@ public class SCR_BatteryManager : MonoBehaviour
 
         SCR_RechargeStation SCR_RechargeStation = other.gameObject.GetComponent<SCR_RechargeStation>();
         if (SCR_RechargeStation != null) {
-            Physics2D.IgnoreCollision(_lightCollider, other);
             _rechargeStation = SCR_RechargeStation;
             _canInteract = true;
         }
         
         SCR_Door SCR_Door = other.gameObject.GetComponent<SCR_Door>();
         if (SCR_Door != null) {
-            Physics2D.IgnoreCollision(_lightCollider, other);
             _door = SCR_Door;
             _canInteract = true;
         }
