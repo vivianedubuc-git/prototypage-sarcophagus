@@ -6,8 +6,8 @@ public class SCR_Situation : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private GameObject _button;
-    private string _situation = "After several burglaries and contraband races through space, you and your comrade are preparing to carry out your last heist. You are heading towards the Sarcophagus, a veritable graveyard of ships coming from all corners of the galaxy. Rumors seem to indicate that unknown technologies are to be found. Unfortunately, your ship is damaged on the way and you have to dock right in the center of the Sarcophagus. You must quickly find your 3 missing spare parts, because strange creatures are lurking around...";
-    private float _speed = 0.1f;
+    private string _situation = "After several burglaries and contraband races through space, you and your comrade are preparing to carry out your last heist. You are heading towards the Sarcophagus, a veritable graveyard of ships coming from all corners of the galaxy. Rumors seem to indicate that unknown technologies are to be found. Unfortunately, your ship is damaged on the way and you have to dock right in the center of the Sarcophagus. You must quickly find your 3 missing spare parts and give them to your comrade, because strange creatures are lurking around...";
+    private float _speed = 0.05f;
 
     private void Start()
     {

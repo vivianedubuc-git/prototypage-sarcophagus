@@ -7,7 +7,7 @@ public class SCR_ItemText : MonoBehaviour
     private Coroutine _coroutineAnimateText = null;
     private int _multiply = 1;
     private int _waitTime = 1;
-    private int _pos = 100;
+    private int _pos = 250;
     private Image _image;
 
     private void Start()
