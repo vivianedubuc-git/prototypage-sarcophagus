@@ -1588,7 +1588,6 @@ MonoBehaviour:
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   _lItems:
   - {fileID: 162044590896951291, guid: bea0ad38dd2f8004ea88b2437366576b, type: 3}
-  _lightCollider: {fileID: 0}
   _equipment: {fileID: 11400000, guid: d18dfd1deddfec44ca5130b181757b1c, type: 2}
 --- !u!114 &5280227395051378306
 MonoBehaviour:
@@ -1603,7 +1602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
-  _lightCollider: {fileID: 0}
   batteryBar: {fileID: 3559206359076167765}
   _mc: {fileID: 3417432873165472747}
 --- !u!1 &6919027897457795640
