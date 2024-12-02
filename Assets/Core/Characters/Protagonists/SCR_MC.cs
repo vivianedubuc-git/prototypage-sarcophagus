@@ -79,6 +79,7 @@ public class SCR_MC : SCR_Combatant
     {
         Debug.Log("MC attacks!");
         _isAttacking = true;
+        animator.SetTrigger("Attack");
         // SCR_SoundManager.instance.PlaySound(_soundAttack);
         yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
@@ -87,6 +88,7 @@ public class SCR_MC : SCR_Combatant
     private IEnumerator CoroutineDamage(StatusValues enemy)
     {
         isBeingDamaged = true;
+        animator.SetTrigger("Hit");
         int damage = CalculateDamage(enemy.ATK, _statusValues.DEF);
         int tempHP = _statusValues.HP;
         if(_statusValues.battery <= 0)  _statusValues.HP -= damage;
