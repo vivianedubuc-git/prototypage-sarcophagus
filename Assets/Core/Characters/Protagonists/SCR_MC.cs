@@ -26,7 +26,7 @@ public class SCR_MC : SCR_Combatant
         _pause = GetComponentInChildren<SCR_Pause>();
         _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-
+    
     private void Update()
     {
         _moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
