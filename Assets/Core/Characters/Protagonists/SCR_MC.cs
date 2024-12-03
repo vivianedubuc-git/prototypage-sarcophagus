@@ -14,6 +14,7 @@ public class SCR_MC : SCR_Combatant
     private float _speed = 0;
     private float _speedMultiply = 2;
     Animator animator;
+    SpriteRenderer _SpriteRenderer;
     private Rigidbody2D _rb;
     private Vector2 _moveVector;
 
@@ -23,6 +24,7 @@ public class SCR_MC : SCR_Combatant
         animator = GetComponentInChildren<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _pause = GetComponentInChildren<SCR_Pause>();
+        _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -31,7 +33,12 @@ public class SCR_MC : SCR_Combatant
         _moveVector = _moveVector.normalized;
         if (_moveVector.magnitude != 0 && !_pause.isPaused)
         {
-            animator.SetFloat("Direction", _moveVector.x);
+            if(_moveVector.x < 0){
+                _SpriteRenderer.flipX = true;
+            
+            }else if(_moveVector.x > 0){  
+                 _SpriteRenderer.flipX = false;
+            }
             animator.SetFloat("Speed", _speed);
         }
         else animator.SetFloat("Speed", 0);
