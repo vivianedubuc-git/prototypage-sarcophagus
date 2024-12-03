@@ -15,12 +15,11 @@ public class SO_Music : ScriptableObject
         _source.loop = true;
         _source.playOnAwake = false;
         _source.Play();
-        AdjustVolume();
+        AdjustVolume(0);
     }
 
-    public void AdjustVolume()
+    public void AdjustVolume(int volume)
     {
-        if (SCR_MapManager.instance.GetSceneName() == "Game") _source.volume = SCR_SoundManager.instance.volumeRef;
-        else _source.volume = 0;
+        _source.volume = volume;
     }
 }

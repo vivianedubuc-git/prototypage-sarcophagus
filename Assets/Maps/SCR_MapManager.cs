@@ -20,6 +20,7 @@ public class SCR_MapManager : MonoBehaviour
         }
         else { Destroy(gameObject); return; }
         DontDestroyOnLoad(gameObject);
+        if (GetSceneName() == "Game") SCR_SoundManager.instance.music.AdjustVolume(1);
     }
 
     public string GetSceneName()
@@ -30,7 +31,8 @@ public class SCR_MapManager : MonoBehaviour
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
-        if (SCR_SoundManager.instance.music.clip != null) SCR_SoundManager.instance.music.AdjustVolume();
+        if (scene == "Game") SCR_SoundManager.instance.music.AdjustVolume(1);
+        else SCR_SoundManager.instance.music.AdjustVolume(0);
     }
 
     private void AnimateOpening()
