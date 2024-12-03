@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SCR_Door : MonoBehaviour
 {
+    [SerializeField] private GameObject _interactionText;
+    public GameObject interactionText { get { return _interactionText; } }
     public float energyCost;
    
     

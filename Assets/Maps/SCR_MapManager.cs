@@ -20,7 +20,7 @@ public class SCR_MapManager : MonoBehaviour
         }
         else { Destroy(gameObject); return; }
         DontDestroyOnLoad(gameObject);
-        if (GetSceneName() == "Game") SCR_SoundManager.instance.music.AdjustVolume(1);
+        if (GetSceneName() == "Game" && SCR_SoundManager.instance != null) SCR_SoundManager.instance.music.AdjustVolume(1);
     }
 
     public string GetSceneName()

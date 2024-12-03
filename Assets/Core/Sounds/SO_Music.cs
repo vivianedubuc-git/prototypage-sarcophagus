@@ -15,7 +15,8 @@ public class SO_Music : ScriptableObject
         _source.loop = true;
         _source.playOnAwake = false;
         _source.Play();
-        AdjustVolume(0);
+        if (SCR_MapManager.instance.GetSceneName() == "Game") AdjustVolume(1);
+        else AdjustVolume(0);
     }
 
     public void AdjustVolume(int volume)

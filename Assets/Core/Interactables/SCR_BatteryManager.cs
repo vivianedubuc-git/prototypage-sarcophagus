@@ -58,20 +58,29 @@ public class SCR_BatteryManager : MonoBehaviour
         if (SCR_RechargeStation != null) {
             _rechargeStation = SCR_RechargeStation;
             _canInteract = true;
+            SCR_RechargeStation.interactionText.SetActive(_canInteract);
         }
         
         SCR_Door SCR_Door = other.gameObject.GetComponent<SCR_Door>();
         if (SCR_Door != null) {
             _door = SCR_Door;
             _canInteract = true;
+            SCR_Door.interactionText.SetActive(_canInteract);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
+        SCR_RechargeStation SCR_RechargeStation = other.gameObject.GetComponent<SCR_RechargeStation>();
+
+        if (SCR_RechargeStation != null) {
+            _canInteract = false;
+            SCR_RechargeStation.interactionText.SetActive(_canInteract);
+        }
         SCR_Door SCR_Door = other.gameObject.GetComponent<SCR_Door>();
 
         if (SCR_Door != null) {
             _canInteract = false;
+            SCR_Door.interactionText.SetActive(_canInteract);
         }
     }
 

@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal;
 
 public class SCR_RechargeStation : MonoBehaviour
 {
+    [SerializeField] private GameObject _interactionText;
+    public GameObject interactionText { get { return _interactionText; } }
     private bool stationActivation;
     private float rechargeCapacity = 500f;
     Animator animator;
