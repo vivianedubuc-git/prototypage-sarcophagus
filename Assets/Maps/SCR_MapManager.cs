@@ -30,7 +30,6 @@ public class SCR_MapManager : MonoBehaviour
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
-        if (SCR_SoundManager.instance.music.clip != null) SCR_SoundManager.instance.music.AdjustVolume();
     }
 
     private void AnimateOpening()
