@@ -57,8 +57,11 @@ public class SCR_MC : SCR_Combatant
             }
             else{
                 _speed = _statusValues.speed;
-                isSprinting = false; 
-                animator.SetBool("IsSprinting", false);
+                if(_speed < 5 && _moveVector.magnitude == 0){
+                
+                    isSprinting = false; 
+                    animator.SetBool("IsSprinting", false);
+                } 
             }  
         } 
         else{

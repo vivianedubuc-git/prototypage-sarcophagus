@@ -70,6 +70,7 @@ public class SCR_Enemy : SCR_Combatant
     {
         Debug.Log("Enemy attacks!");
         _isAttacking = true;
+        _animator.SetTrigger("Attack");
         // SCR_SoundManager.instance.PlaySound(_soundAttack);
         yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
