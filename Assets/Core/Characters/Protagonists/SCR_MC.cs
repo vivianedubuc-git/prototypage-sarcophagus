@@ -46,8 +46,14 @@ public class SCR_MC : SCR_Combatant
         if(Input.GetButton("Sprint")){
             if(_statusValues.battery > 0){
                 _speed = _statusValues.speed * _speedMultiply;
-                isSprinting = true;
-                animator.SetBool("IsSprinting", true);
+                if(_speed > 5 && _moveVector.magnitude != 0){
+                    isSprinting = true;
+                    animator.SetBool("IsSprinting", true);
+                }
+                else{
+                    isSprinting = false; 
+                    animator.SetBool("IsSprinting", false);  
+                }
             }
             else{
                 _speed = _statusValues.speed;
@@ -57,8 +63,11 @@ public class SCR_MC : SCR_Combatant
         } 
         else{
             _speed = _statusValues.speed;
-            isSprinting = false;
-            animator.SetBool("IsSprinting", false);
+            if(_speed < 5 && _moveVector.magnitude == 0){
+                
+                isSprinting = false; 
+                animator.SetBool("IsSprinting", false);
+            } 
         } 
 
         if (Input.GetMouseButtonDown(0) && !_isAttacking && !_pause.isPaused)

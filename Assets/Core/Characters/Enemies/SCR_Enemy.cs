@@ -11,16 +11,19 @@ public class SCR_Enemy : SCR_Combatant
     private Transform _target;
     private NavMeshAgent _agent;
     private Animator _animator;
+    SpriteRenderer _SpriteRenderer;
     private bool _isAttacking = false;
     public bool isAttacking { get { return _isAttacking; } }
 
     private void Start()
     {
+        _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         _statusValues.StartGame();
+        
     }
 
     private void Update()
@@ -29,8 +32,8 @@ public class SCR_Enemy : SCR_Combatant
         {
             _agent.SetDestination(_target.position);
             _animator.SetFloat("Speed", 1);
-            if (_target.position.x < transform.position.x) _animator.SetFloat("Direction", 1);
-            else _animator.SetFloat("Direction", -1);
+            if (_target.position.x < transform.position.x) _SpriteRenderer.flipX = true;
+            else _SpriteRenderer.flipX = false;
         }
         else
         {
