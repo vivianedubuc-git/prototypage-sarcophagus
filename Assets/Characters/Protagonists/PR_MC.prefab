@@ -1719,6 +1719,7 @@ MonoBehaviour:
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   batteryBar: {fileID: 3559206359076167765}
   _mc: {fileID: 3417432873165472747}
+  _light: {fileID: 2000830862580471347}
 --- !u!1 &6919027897457795640
 GameObject:
   m_ObjectHideFlags: 0
