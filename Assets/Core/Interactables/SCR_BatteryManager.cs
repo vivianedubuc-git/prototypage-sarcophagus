@@ -78,12 +78,14 @@ public class SCR_BatteryManager : MonoBehaviour
         if (SCR_RechargeStation != null) {
             _canInteract = false;
             SCR_RechargeStation.interactionText.SetActive(_canInteract);
+            _rechargeStation = null;
         }
         SCR_Door SCR_Door = other.gameObject.GetComponent<SCR_Door>();
 
         if (SCR_Door != null) {
             _canInteract = false;
             SCR_Door.interactionText.SetActive(_canInteract);
+            _door = null;
         }
     }
 
