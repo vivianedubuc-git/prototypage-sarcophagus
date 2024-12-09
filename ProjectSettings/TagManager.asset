@@ -59,3 +59,6 @@ TagManager:
   - name: Decor
     uniqueID: 169259349
     locked: 0
+  - name: Lights
+    uniqueID: 1261944443
+    locked: 0
