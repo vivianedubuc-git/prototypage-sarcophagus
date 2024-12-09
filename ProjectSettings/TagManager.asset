@@ -50,15 +50,15 @@ TagManager:
   - name: Collision
     uniqueID: 4077079991
     locked: 0
-  - name: Characters
-    uniqueID: 911974105
-    locked: 0
-  - name: WalkBehind
-    uniqueID: 669673617
-    locked: 0
   - name: Decor
     uniqueID: 169259349
     locked: 0
   - name: Lights
     uniqueID: 1261944443
+    locked: 0
+  - name: Characters
+    uniqueID: 911974105
+    locked: 0
+  - name: WalkBehind
+    uniqueID: 669673617
     locked: 0
