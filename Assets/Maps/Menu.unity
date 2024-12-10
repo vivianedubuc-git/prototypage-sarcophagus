@@ -252,17 +252,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &830270556 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4085865064561264664, guid: 376e3be696aa0534d867f78fb022e60a, type: 3}
-  m_PrefabInstance: {fileID: 1067739314}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a2d3a7366bde84b98f0d91c7cb36b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &845428128
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +612,7 @@ GameObject:
   - component: {fileID: 1740635396}
   - component: {fileID: 1740635395}
   - component: {fileID: 1740635394}
+  - component: {fileID: 1740635398}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -717,6 +707,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1740635398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740635393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5214d79fcb6c5cb4da0d192d008d45a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1779439812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -788,14 +790,14 @@ PrefabInstance:
     - target: {fileID: 7807633275491169213, guid: 810849d7419729740866b6870239addd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 830270556}
+      objectReference: {fileID: 1740635398}
     - target: {fileID: 7807633275491169213, guid: 810849d7419729740866b6870239addd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 7807633275491169213, guid: 810849d7419729740866b6870239addd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SCR_MapManager, Assembly-CSharp
+      value: SCR_Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7807633275491169213, guid: 810849d7419729740866b6870239addd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
