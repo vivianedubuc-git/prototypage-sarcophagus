@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SCR_Inventory : MonoBehaviour
 {
     [SerializeField] private StatusValues _statusValues;
+    [SerializeField] private TextMeshProUGUI _itemsText;
     [SerializeField] private List<SCR_Item> _lItems;
     public List<SCR_Item> lItems
     {
@@ -11,6 +13,12 @@ public class SCR_Inventory : MonoBehaviour
         set { _lItems = value; }
     }
     [SerializeField] private SO_Item _equipment;
+    private int _spaceshipPieces = 0;
+    private int _goalSpaceshipPieces = 3;
+    public int goalSpaceshipPieces
+    {
+        get { return _goalSpaceshipPieces; }
+    }
     private SCR_Pause _pause;
     private bool _canInteract = false;
     private SCR_NPC _NPC;
@@ -19,6 +27,7 @@ public class SCR_Inventory : MonoBehaviour
     {
         AddEquipment(_equipment);
         _pause = GetComponentInChildren<SCR_Pause>();
+        _itemsText.text = _spaceshipPieces + "/" + _goalSpaceshipPieces;
     }
 
     private void Update()
@@ -40,6 +49,10 @@ public class SCR_Inventory : MonoBehaviour
             _statusValues.ATK += equipment.ATKBonus;
             _statusValues.ATKSpeed = equipment.ATKSpeed;
             gameObject.GetComponentInChildren<SpriteRenderer>().sprite = equipment.sprite;
+        }
+        if (equipment.itemType == ItemType.valueables)
+        {
+            UpdateInventory();
         }
     }
 
@@ -73,5 +86,11 @@ public class SCR_Inventory : MonoBehaviour
             _canInteract = false;
             _NPC.interactionText.SetActive(_canInteract);
         }
+    }
+
+    private void UpdateInventory()
+    {
+        _spaceshipPieces++;
+        _itemsText.text = _spaceshipPieces + "/" + _goalSpaceshipPieces;
     }
 }

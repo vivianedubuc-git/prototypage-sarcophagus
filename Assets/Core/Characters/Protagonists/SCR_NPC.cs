@@ -6,7 +6,6 @@ public class SCR_NPC : MonoBehaviour
     [SerializeField] private GameObject _retroactionText;
     [SerializeField] private GameObject _interactionText;
     public GameObject interactionText { get { return _interactionText; } }
-    [SerializeField] private int _goalSpaceshipPieces;
     private int _totalSpaceshipPieces = 0;
     private int _waitTime = 3;
 
@@ -42,7 +41,7 @@ public class SCR_NPC : MonoBehaviour
                 _totalSpaceshipPieces++;
                 inventory.lItems.RemoveAt(i);
 
-                if (_totalSpaceshipPieces >= _goalSpaceshipPieces)
+                if (_totalSpaceshipPieces >= inventory.goalSpaceshipPieces)
                 {
                     SCR_MapManager.instance.ChangeScene("Victory");
                 }

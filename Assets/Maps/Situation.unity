@@ -584,7 +584,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -657,7 +657,6 @@ MonoBehaviour:
   _text4: {fileID: 400219228}
   _text5: {fileID: 530956892}
   _button: {fileID: 1035621653}
-  _taptapSound: {fileID: 8300000, guid: 5c85f3f0e33dcc94ea3cf6e77ea80e3e, type: 3}
 --- !u!1001 &1006099932
 PrefabInstance:
   m_ObjectHideFlags: 0

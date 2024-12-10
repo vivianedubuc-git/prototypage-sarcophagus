@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab74cb697af6a394e8fdfaf6f42adf74, type: 3}
   m_Name: StatusValues_Human
   m_EditorClassIdentifier: 
-  _maxHP: 40
+  _maxHP: 50
   _maxBattery: 0
   _initialBattery: 0
   _battery: 0
   _initialATK: 50
   _DEF: 50
-  _initialSpeed: 1
-  _initialATKSpeed: 1
-  _invicibility: 0
+  _initialSpeed: 5
+  _initialATKSpeed: 5
+  _invicibility: 0.5
   _initialInventoryCapacity: 0

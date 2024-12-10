@@ -3,6 +3,7 @@ using UnityEngine;
 public class SCR_Pause : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _canvasInventory;
     private bool _isPaused;
     public bool isPaused
     {
@@ -12,6 +13,7 @@ public class SCR_Pause : MonoBehaviour
     private void Start()
     {
         _isPaused = _pauseMenu.activeSelf;
+        _canvasInventory.SetActive(!_isPaused);
     }
 
     private void Update()
@@ -20,6 +22,7 @@ public class SCR_Pause : MonoBehaviour
         {
             _isPaused = !_isPaused;
             _pauseMenu.SetActive(_isPaused);
+            _canvasInventory.SetActive(!_isPaused);
             SCR_SoundManager.instance.PlaySound(SCR_SoundManager.instance.soundClic);
 
             if (_isPaused)

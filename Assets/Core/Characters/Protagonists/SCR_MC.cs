@@ -88,11 +88,6 @@ public class SCR_MC : SCR_Combatant
         if(SCR_Enemy != null){
             _isInAttackRange = true;
         }
-
-        if (SCR_Enemy != null && SCR_Enemy.isAttacking && !isBeingDamaged)
-        {
-            StartCoroutine(CoroutineDamage(SCR_Enemy.statusValues));
-        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
@@ -111,6 +106,11 @@ public class SCR_MC : SCR_Combatant
         if(_isInAttackRange == false) SCR_SoundManager.instance.PlaySound(_soundAttackWhiff);
         yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
+    }
+
+    public void GetDamaged(StatusValues enemy)
+    {
+        StartCoroutine(CoroutineDamage(enemy));
     }
 
     private IEnumerator CoroutineDamage(StatusValues enemy)

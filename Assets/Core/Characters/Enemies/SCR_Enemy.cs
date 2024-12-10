@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class SCR_Enemy : SCR_Combatant
 {
@@ -8,6 +9,8 @@ public class SCR_Enemy : SCR_Combatant
     public StatusValues statusValues { get { return _statusValues; } }
     [SerializeField] private AudioClip[] _soundAttack;
     [SerializeField] private AudioClip _soundDamage;
+    [SerializeField] private GameObject _lifeBar;
+    [SerializeField] private Image _lifeFill;
     private int _HP = 0;
     private Transform _target;
     private NavMeshAgent _agent;
@@ -25,6 +28,7 @@ public class SCR_Enemy : SCR_Combatant
         _agent.updateUpAxis = false;
         _statusValues.StartGame();
         _HP = _statusValues.HP;
+        _lifeFill.fillAmount = (float)_statusValues.HP/(float)_statusValues.maxHP;
     }
 
     private void Update()
@@ -61,6 +65,7 @@ public class SCR_Enemy : SCR_Combatant
                 }
                 if (SCR_MC != null && !isAttacking)
                 {
+                    SCR_MC.GetDamaged(_statusValues);
                     StartCoroutine(CoroutineAttack());
                 }
             }
@@ -79,6 +84,7 @@ public class SCR_Enemy : SCR_Combatant
 
     private IEnumerator CoroutineDamage(StatusValues MC)
     {
+        _lifeBar.SetActive(true);
         isBeingDamaged = true;
         _animator.SetTrigger("Hit");
         PunchSFX();
@@ -86,6 +92,7 @@ public class SCR_Enemy : SCR_Combatant
         int tempHP = _HP;
         _HP -= damage;
         Debug.Log("Enemy has " + _HP + " HP left, enemy lost " + damage + " HP!");
+        _lifeFill.fillAmount = (float)_HP/(float)_statusValues.maxHP;
         if (_HP <= 0) Die();
         else if (_HP < tempHP) AnimateDamage();
         // SCR_SoundManager.instance.PlaySound(_soundDamage);
