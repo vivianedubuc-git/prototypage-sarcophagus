@@ -22,7 +22,7 @@ public class SCR_Situation : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("CoroutineAnimateText");
+        StartCoroutine(CoroutineAnimateText());
     }
 
     private void Update()

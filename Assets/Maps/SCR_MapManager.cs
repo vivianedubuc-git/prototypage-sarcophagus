@@ -32,7 +32,11 @@ public class SCR_MapManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
         if (scene == "Game") SCR_SoundManager.instance.music.AdjustVolume(1);
-        else SCR_SoundManager.instance.music.AdjustVolume(0);
+        else 
+        {
+            Time.timeScale = 1;
+            SCR_SoundManager.instance.music.AdjustVolume(0);
+        }
     }
 
     private void AnimateOpening()

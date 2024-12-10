@@ -25,7 +25,6 @@ public class SCR_Enemy : SCR_Combatant
         _agent.updateUpAxis = false;
         _statusValues.StartGame();
         _HP = _statusValues.HP;
-        Debug.Log(_HP);
     }
 
     private void Update()
