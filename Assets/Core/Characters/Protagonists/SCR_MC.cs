@@ -44,10 +44,10 @@ public class SCR_MC : SCR_Combatant
         }
         else animator.SetFloat("Speed", 0);
 
-        if(Input.GetButton("Sprint")){
+        if(Input.GetButton("Sprint") && !_pause.isPaused){
             if(_statusValues.battery > 0){
                 _speed = _statusValues.speed * _speedMultiply;
-                if(_speed > 5 && _moveVector.magnitude != 0){
+                if(_moveVector.magnitude != 0){
                     isSprinting = true;
                     animator.SetBool("IsSprinting", true);
                 }
@@ -58,20 +58,14 @@ public class SCR_MC : SCR_Combatant
             }
             else{
                 _speed = _statusValues.speed;
-                if(_speed < 5 && _moveVector.magnitude == 0){
-                
-                    isSprinting = false; 
-                    animator.SetBool("IsSprinting", false);
-                } 
+                isSprinting = false; 
+                animator.SetBool("IsSprinting", false);
             }  
         } 
         else{
             _speed = _statusValues.speed;
-            if(_speed < 5 && _moveVector.magnitude == 0){
-                
-                isSprinting = false; 
-                animator.SetBool("IsSprinting", false);
-            } 
+            isSprinting = false; 
+            animator.SetBool("IsSprinting", false);
         } 
 
         if (Input.GetMouseButtonDown(0) && !_isAttacking && !_pause.isPaused)
@@ -82,7 +76,7 @@ public class SCR_MC : SCR_Combatant
 
     private void FixedUpdate()
     {
-        _rb.MovePosition(_rb.position + _moveVector * _speed * Time.fixedDeltaTime);
+        if (!_pause.isPaused) _rb.MovePosition(_rb.position + _moveVector * _speed * Time.fixedDeltaTime);
     }
 
     void OnTriggerStay2D(Collider2D other)

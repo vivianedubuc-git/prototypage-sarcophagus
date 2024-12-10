@@ -59,7 +59,7 @@ public class StatusValues : ScriptableObject
         get { return _speed; }
         set { _speed = value; }
     }
-    [SerializeField][Range(1, 10)] private float _initialATKSpeed;
+    [SerializeField][Range(0, 10)] private float _initialATKSpeed;
     public float initialATKSpeed { get { return _initialATKSpeed; } }
     private float _ATKSpeed;
     public float ATKSpeed
