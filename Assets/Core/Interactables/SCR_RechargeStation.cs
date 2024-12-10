@@ -26,18 +26,15 @@ public class SCR_RechargeStation : MonoBehaviour
         if(stationActivation == true && batterySpace >= rechargeCapacity){
             battery._statusValues.battery += (int)rechargeCapacity;
             battery.batteryBar.fillAmount = (float)battery._statusValues.battery/(float)battery._statusValues.maxBattery;
-            battery.gameObject.GetComponentInChildren<Light2D>().intensity = battery.batteryBar.fillAmount;
             rechargeCapacity = 0;
             stationActivation = false;
             animator.SetBool("isRunning", false);
-            gameObject.GetComponentInChildren<Light2D>().intensity = 0f;
             Debug.Log("Replenishing battery");
             SCR_SoundManager.instance.PlaySound(_rechargeSFX);
             
         }else if(stationActivation == true && batterySpace < rechargeCapacity && battery._statusValues.battery != battery._statusValues.maxBattery){
            battery._statusValues.battery += (int)batterySpace;
            battery.batteryBar.fillAmount = (float)battery._statusValues.battery/(float)battery._statusValues.maxBattery;
-           battery.gameObject.GetComponentInChildren<Light2D>().intensity = battery.batteryBar.fillAmount;
            rechargeCapacity -= (int)batterySpace;
 
            Debug.Log("Replenishing full battery");

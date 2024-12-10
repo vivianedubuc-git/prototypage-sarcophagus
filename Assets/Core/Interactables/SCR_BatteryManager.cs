@@ -14,7 +14,6 @@ public class SCR_BatteryManager : MonoBehaviour
     private SCR_Door _door;
     public int sprintCost;
     [SerializeField] private SCR_MC _mc;
-    [SerializeField] private Light2D _light;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +47,6 @@ public class SCR_BatteryManager : MonoBehaviour
     public void UseBattery(int batteryUse){
        _statusValues.battery -= batteryUse;
        batteryBar.fillAmount = (float)_statusValues.battery/(float)_statusValues.maxBattery;
-       _light.intensity = batteryBar.fillAmount;
     }
     public void UpdateBatteryUI(){
         Debug.Log("UPDATE");
