@@ -19,6 +19,6 @@ MonoBehaviour:
   _initialATK: 50
   _DEF: 50
   _initialSpeed: 5
-  _initialATKSpeed: 5
+  _initialATKSpeed: 2
   _invicibility: 0.5
   _initialInventoryCapacity: 0
