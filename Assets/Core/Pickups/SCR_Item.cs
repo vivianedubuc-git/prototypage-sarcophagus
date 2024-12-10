@@ -8,6 +8,7 @@ public class SCR_Item : MonoBehaviour
     [SerializeField] private SCR_ItemText _itemText;
     public SCR_ItemText itemText { get { return _itemText; } set { _itemText = value; } }
     private Vector2 _finalPos = Vector2.up;
+     [SerializeField] private AudioClip _pickUpSFX;
     private float _animationTime = 1f;
 
     public void AnimatePickUp()
@@ -25,6 +26,7 @@ public class SCR_Item : MonoBehaviour
         Color startColor = sprite.color;
         Color finalColor = new Color(startColor.r, startColor.g, startColor.b, 0);
         float time = 0;
+        SCR_SoundManager.instance.PlaySound(_pickUpSFX);
         while (time < _animationTime)
         {
             transform.position = Vector3.Lerp(startPos, finalPos, (time / _animationTime));

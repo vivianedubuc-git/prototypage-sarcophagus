@@ -5,11 +5,13 @@ public class SCR_MC : SCR_Combatant
 {
     [SerializeField] private StatusValues _statusValues;
     public StatusValues statusValues { get { return _statusValues; } }
-    [SerializeField] private AudioClip _soundAttack;
-    [SerializeField] private AudioClip _soundDamage;
+    //[SerializeField] private AudioClip[] _soundAttack;
+    [SerializeField] private AudioClip _soundAttackWhiff;
+    [SerializeField] private AudioClip[] _soundDamage;
     [SerializeField] private AudioClip _soundDeath;
     private SCR_Pause _pause;
     private bool _isAttacking = false;
+    private bool _isInAttackRange = false;
     public bool isSprinting = false;
     public bool isAttacking { get { return _isAttacking; } }
     private float _speed = 0;
@@ -83,9 +85,21 @@ public class SCR_MC : SCR_Combatant
     {
         SCR_Enemy SCR_Enemy = other.gameObject.GetComponentInParent<SCR_Enemy>();
 
+        if(SCR_Enemy != null){
+            _isInAttackRange = true;
+        }
+
         if (SCR_Enemy != null && SCR_Enemy.isAttacking && !isBeingDamaged)
         {
             StartCoroutine(CoroutineDamage(SCR_Enemy.statusValues));
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        SCR_Enemy SCR_Enemy = other.gameObject.GetComponentInParent<SCR_Enemy>();
+        
+        if(SCR_Enemy != null){
+            _isInAttackRange = false;
         }
     }
 
@@ -94,7 +108,7 @@ public class SCR_MC : SCR_Combatant
         Debug.Log("MC attacks!");
         _isAttacking = true;
         animator.SetTrigger("Attack");
-        SCR_SoundManager.instance.PlaySound(_soundAttack);
+        if(_isInAttackRange == false) SCR_SoundManager.instance.PlaySound(_soundAttackWhiff);
         yield return new WaitForSeconds(_statusValues.ATKSpeed);
         _isAttacking = false;
     }
@@ -103,6 +117,7 @@ public class SCR_MC : SCR_Combatant
     {
         isBeingDamaged = true;
         animator.SetTrigger("Hit");
+      
         int damage = CalculateDamage(enemy.ATK, _statusValues.DEF);
         int tempHP = _statusValues.HP;
         if(_statusValues.battery <= 0)  _statusValues.HP -= damage;
@@ -113,8 +128,15 @@ public class SCR_MC : SCR_Combatant
              SCR_SoundManager.instance.PlaySound(_soundDeath);
         } 
         else if (_statusValues.battery < _statusValues.maxBattery) AnimateDamage();
-        SCR_SoundManager.instance.PlaySound(_soundDamage);
+        HurtSFX();
         yield return new WaitForSeconds(_statusValues.invicibility);
         isBeingDamaged = false;
+    }
+
+    private void HurtSFX(){
+        int maxNumber = _soundDamage.Length;
+        int randomNumber;
+        randomNumber = Random.Range(0,maxNumber);
+        SCR_SoundManager.instance.PlaySound(_soundDamage[randomNumber]);
     }
 }

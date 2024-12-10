@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: 0f6de6ea095230b41b5ea2584e0056f4, type: 2}
   _itemText: {fileID: 0}
+  _pickUpSFX: {fileID: 8300000, guid: 5a4072a94e9a70f4f9aae0f3c3cf4d1a, type: 3}

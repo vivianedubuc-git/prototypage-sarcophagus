@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934455343205706861}
-  - component: {fileID: 2974056599421601468}
+  - component: {fileID: 3506101136263651345}
   - component: {fileID: 2517524467144059041}
   m_Layer: 8
   m_Name: PR_NPC
@@ -241,8 +241,8 @@ Transform:
   - {fileID: 8101706190158294162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2974056599421601468
-BoxCollider2D:
+--- !u!58 &3506101136263651345
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -274,18 +274,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1.5
 --- !u!114 &2517524467144059041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +364,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 911974105
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: 1576144571, guid: 29f92f57c914af248a72355ad73778c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

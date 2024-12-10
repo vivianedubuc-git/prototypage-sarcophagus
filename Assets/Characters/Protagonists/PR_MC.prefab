@@ -1685,8 +1685,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
-  _soundAttack: {fileID: 8300000, guid: 80c2621b524f410419944ac5e9b0e924, type: 3}
-  _soundDamage: {fileID: 8300000, guid: 6019e50ee7dfdb740bc355e6af2ce87f, type: 3}
+  _soundAttackWhiff: {fileID: 8300000, guid: 9df21399a6a938b4eaa20c6417f5baf2, type: 3}
+  _soundDamage:
+  - {fileID: 8300000, guid: 28b91d282765eee41b167c1ebd446f3a, type: 3}
+  - {fileID: 8300000, guid: 6019e50ee7dfdb740bc355e6af2ce87f, type: 3}
+  - {fileID: 8300000, guid: 446dd1ba77675084a8387332026257d4, type: 3}
+  - {fileID: 8300000, guid: 9cde350d819bb0140bf8b3f2bd7ea90b, type: 3}
+  - {fileID: 8300000, guid: 4986591cc02c92e4ea2fd6dcf1d96ec4, type: 3}
+  - {fileID: 8300000, guid: b9a9a085746a9de4fa88685dc4d55fad, type: 3}
+  _soundDeath: {fileID: 8300000, guid: 0c557f7608dbc984db7d9a2d83f16e00, type: 3}
   isSprinting: 0
 --- !u!114 &8643177342908031960
 MonoBehaviour:
@@ -1720,7 +1727,6 @@ MonoBehaviour:
   batteryBar: {fileID: 3559206359076167765}
   sprintCost: 20
   _mc: {fileID: 3417432873165472747}
-  _light: {fileID: 2000830862580471347}
 --- !u!1 &6919027897457795640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8598e4ce370a48428cacab9a25729c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _footStepSFX:
+  - {fileID: 8300000, guid: cf9bc8780524e6a4ebfa5d5170d817e3, type: 3}
+  - {fileID: 8300000, guid: 34cda6915c903de409114513dc735e21, type: 3}
+  - {fileID: 8300000, guid: e9c23aeb4e7702f42a88268df1b47d2c, type: 3}
+  - {fileID: 8300000, guid: 00905f09a4d29b44a8a8d40664d4ea4f, type: 3}
 --- !u!1 &8566417901532779943
 GameObject:
   m_ObjectHideFlags: 0

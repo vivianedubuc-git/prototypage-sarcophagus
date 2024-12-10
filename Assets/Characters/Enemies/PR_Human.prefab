@@ -189,7 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: c10f1b3c26a543842a835845c1d9fbe0, type: 2}
-  _soundAttack: {fileID: 0}
+  _soundAttack:
+  - {fileID: 8300000, guid: 616d3310aa89ce947b5e069437afde17, type: 3}
+  - {fileID: 8300000, guid: 80c2621b524f410419944ac5e9b0e924, type: 3}
+  - {fileID: 8300000, guid: c96796ccdf1ddb5479fabd246260b15b, type: 3}
   _soundDamage: {fileID: 0}
 --- !u!195 &3344940713068053922
 NavMeshAgent:
@@ -285,8 +288,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 911974105
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: -1566119788, guid: 1041f330bb822ac4f8dc424bda53e96f, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}

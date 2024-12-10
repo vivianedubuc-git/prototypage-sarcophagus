@@ -9,6 +9,8 @@ public class SCR_NPC : MonoBehaviour
     [SerializeField] private int _goalSpaceshipPieces;
     private int _totalSpaceshipPieces = 0;
     private int _waitTime = 3;
+
+    Animator _animator;
     private string _hasPieceText = "Thank you for the spaceship piece";
     private string _hasNoPieceText = "Well? Time to go find these spaceship pieces!";
     private TextMeshProUGUI _textRetroaction;
@@ -16,6 +18,16 @@ public class SCR_NPC : MonoBehaviour
     private void Start()
     {
         _textRetroaction = _retroactionText.GetComponentInChildren<TextMeshProUGUI>();
+        _animator = GetComponentInChildren<Animator>();
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        SCR_MC SCR_MC = other.gameObject.GetComponentInParent<SCR_MC>();
+
+        if(SCR_MC != null){
+            _animator.SetTrigger("StartIdleVariation");
+        }
+
     }
 
     public void Interact(SCR_Inventory inventory)

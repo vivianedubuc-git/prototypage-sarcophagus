@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class SCR_SpriteMC : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip[] _footStepSFX;
     public void Die()
     {
         SCR_MapManager.instance.ChangeScene("Defeat");
+    }
+    public void FootStepSFX(){
+         int maxNumber = _footStepSFX.Length;
+         int randomNumber;
+         randomNumber = Random.Range(0,maxNumber);
+         SCR_SoundManager.instance.PlaySound(_footStepSFX[randomNumber]);
     }
     public void Hit(){
          StartCoroutine(CoroutineHitColor());

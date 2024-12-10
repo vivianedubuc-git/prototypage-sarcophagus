@@ -6,7 +6,7 @@ public class SCR_Enemy : SCR_Combatant
 {
     [SerializeField] private StatusValues _statusValues;
     public StatusValues statusValues { get { return _statusValues; } }
-    [SerializeField] private AudioClip _soundAttack;
+    [SerializeField] private AudioClip[] _soundAttack;
     [SerializeField] private AudioClip _soundDamage;
     private int _HP = 0;
     private Transform _target;
@@ -80,6 +80,8 @@ public class SCR_Enemy : SCR_Combatant
     private IEnumerator CoroutineDamage(StatusValues MC)
     {
         isBeingDamaged = true;
+        _animator.SetTrigger("Hit");
+        PunchSFX();
         int damage = CalculateDamage(MC.ATK, _statusValues.DEF);
         int tempHP = _HP;
         _HP -= damage;
@@ -89,6 +91,12 @@ public class SCR_Enemy : SCR_Combatant
         // SCR_SoundManager.instance.PlaySound(_soundDamage);
         yield return new WaitForSeconds(MC.ATKSpeed);
         isBeingDamaged = false;
+    }
+    private void PunchSFX(){
+        int maxNumber = _soundAttack.Length;
+        int randomNumber;
+        randomNumber = Random.Range(0,maxNumber);
+        SCR_SoundManager.instance.PlaySound(_soundAttack[randomNumber]);
     }
 
     private void Die()
