@@ -44,6 +44,8 @@ public class SCR_Enemy : SCR_Combatant
         {
             _animator.SetFloat("Speed", 0);
         }
+
+        _lifeBar.SetActive(isBeingDamaged);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -84,7 +86,6 @@ public class SCR_Enemy : SCR_Combatant
 
     private IEnumerator CoroutineDamage(StatusValues MC)
     {
-        _lifeBar.SetActive(true);
         isBeingDamaged = true;
         _animator.SetTrigger("Hit");
         PunchSFX();
