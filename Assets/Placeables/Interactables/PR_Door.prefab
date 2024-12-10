@@ -326,6 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactionText: {fileID: 3062419049452671472}
   energyCost: 0
+  _openDoor: {fileID: 8300000, guid: bd8899723ac721742906c77bea9c29ac, type: 3}
+  _noEnergy: {fileID: 8300000, guid: a844a0619641d9240854b45d05416a28, type: 3}
 --- !u!1001 &7775995261266114419
 PrefabInstance:
   m_ObjectHideFlags: 0

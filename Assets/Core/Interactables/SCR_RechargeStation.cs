@@ -10,6 +10,8 @@ public class SCR_RechargeStation : MonoBehaviour
     private bool stationActivation;
     private float rechargeCapacity = 500f;
     Animator animator;
+    [SerializeField] private AudioClip _rechargeSFX;
+    [SerializeField] private AudioClip _noEnergySFX;
 
     void Start(){
 
@@ -30,6 +32,7 @@ public class SCR_RechargeStation : MonoBehaviour
             animator.SetBool("isRunning", false);
             gameObject.GetComponentInChildren<Light2D>().intensity = 0f;
             Debug.Log("Replenishing battery");
+            SCR_SoundManager.instance.PlaySound(_rechargeSFX);
             
         }else if(stationActivation == true && batterySpace < rechargeCapacity && battery._statusValues.battery != battery._statusValues.maxBattery){
            battery._statusValues.battery += (int)batterySpace;
@@ -39,9 +42,11 @@ public class SCR_RechargeStation : MonoBehaviour
 
            Debug.Log("Replenishing full battery");
            Debug.Log("il reste " + rechargeCapacity + "pts à la station");
+           SCR_SoundManager.instance.PlaySound(_rechargeSFX);
 
         }else if(stationActivation == false){
-           Debug.Log("Recharge Station has no energy left"); 
+           Debug.Log("Recharge Station has no energy left");
+           SCR_SoundManager.instance.PlaySound(_noEnergySFX); 
         }
         else{
            Debug.Log("Your battery is full");  

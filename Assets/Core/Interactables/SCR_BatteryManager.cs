@@ -12,6 +12,7 @@ public class SCR_BatteryManager : MonoBehaviour
     private bool _canInteract = false; 
     private SCR_RechargeStation _rechargeStation;
     private SCR_Door _door;
+    public int sprintCost;
     [SerializeField] private SCR_MC _mc;
     [SerializeField] private Light2D _light;
     // Start is called before the first frame update
@@ -93,7 +94,7 @@ public class SCR_BatteryManager : MonoBehaviour
     {
         while (_mc.isSprinting)
         {
-            UseBattery(50);
+            UseBattery(sprintCost);
             yield return new WaitForSeconds(1);  
         }
         _coroutineSprint = null;
