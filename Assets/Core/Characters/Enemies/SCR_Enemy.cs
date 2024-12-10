@@ -8,6 +8,7 @@ public class SCR_Enemy : SCR_Combatant
     public StatusValues statusValues { get { return _statusValues; } }
     [SerializeField] private AudioClip _soundAttack;
     [SerializeField] private AudioClip _soundDamage;
+    private int _HP = 0;
     private Transform _target;
     private NavMeshAgent _agent;
     private Animator _animator;
@@ -23,7 +24,8 @@ public class SCR_Enemy : SCR_Combatant
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         _statusValues.StartGame();
-        
+        _HP = _statusValues.HP;
+        Debug.Log(_HP);
     }
 
     private void Update()
@@ -80,11 +82,11 @@ public class SCR_Enemy : SCR_Combatant
     {
         isBeingDamaged = true;
         int damage = CalculateDamage(MC.ATK, _statusValues.DEF);
-        int tempHP = _statusValues.HP;
-        _statusValues.HP -= damage;
-        Debug.Log("Enemy has " + _statusValues.HP + " HP left, enemy lost " + damage + " HP!");
-        if (_statusValues.HP <= 0) Die();
-        else if (_statusValues.HP < tempHP) AnimateDamage();
+        int tempHP = _HP;
+        _HP -= damage;
+        Debug.Log("Enemy has " + _HP + " HP left, enemy lost " + damage + " HP!");
+        if (_HP <= 0) Die();
+        else if (_HP < tempHP) AnimateDamage();
         // SCR_SoundManager.instance.PlaySound(_soundDamage);
         yield return new WaitForSeconds(MC.ATKSpeed);
         isBeingDamaged = false;

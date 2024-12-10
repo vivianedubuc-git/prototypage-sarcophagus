@@ -10,6 +10,7 @@ public class SCR_Situation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text4;
     [SerializeField] private TextMeshProUGUI _text5;
     [SerializeField] private GameObject _button;
+    //[SerializeField] private AudioClip _taptapSound;
     private string _situation1 = "After countless smuggling runs across the local nebula cluster, you and your partner, Lily, ultimately come to the conclusion that it may be time to consider retirement. Embracing this idea of the score to end all scores, you both decide to head for the Sarcophagus.";
     private string _situation2 = "The Sarcophagus is the largest known graveyard of abandoned and derelict spaceships in the charted regions of the Milky Way. It continually attracts private spacefarers and adventurers due to the immense amount of rare and potentially undiscovered resources and technologies it’s rumored to contain. Very few are brave enough to venture closer to its center.";
     private string _situation3 = "A large metal object slams against the main engine of your ship, and you’re eventually forced to make an emergency docking at a strange-looking ship. Its model is entirely unknown to either you or Lily.";
