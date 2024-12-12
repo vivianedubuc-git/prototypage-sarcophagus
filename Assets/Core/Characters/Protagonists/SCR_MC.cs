@@ -12,6 +12,7 @@ public class SCR_MC : SCR_Combatant
     private SCR_Pause _pause;
     private bool _isAttacking = false;
     private bool _isInAttackRange = false;
+    private bool _isDead = false;
     public bool isSprinting = false;
     public bool isAttacking { get { return _isAttacking; } }
     private float _speed = 0;
@@ -34,7 +35,7 @@ public class SCR_MC : SCR_Combatant
     {
         _moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _moveVector = _moveVector.normalized;
-        if (_moveVector.magnitude != 0 && !_pause.isPaused)
+        if (_moveVector.magnitude != 0 && !_isDead && !_pause.isPaused)
         {
             if(_moveVector.x < 0){
                 _SpriteRenderer.flipX = true;
@@ -46,7 +47,7 @@ public class SCR_MC : SCR_Combatant
         }
         else animator.SetFloat("Speed", 0);
 
-        if(Input.GetButton("Sprint") && !_pause.isPaused){
+        if(Input.GetButton("Sprint") && !_isDead && !_pause.isPaused){
             if(_statusValues.battery > 0){
                 _speed = _statusValues.speed * _speedMultiply;
                 if(_moveVector.magnitude != 0){
@@ -64,13 +65,13 @@ public class SCR_MC : SCR_Combatant
                 animator.SetBool("IsSprinting", false);
             }  
         } 
-        else{
+        else if (!_isDead && !_pause.isPaused) {
             _speed = _statusValues.speed;
             isSprinting = false; 
             animator.SetBool("IsSprinting", false);
         } 
 
-        if (Input.GetMouseButtonDown(0) && !_isAttacking && !_pause.isPaused)
+        if (Input.GetMouseButtonDown(0) && !_isAttacking && !_isDead && !_pause.isPaused)
         {
             StartCoroutine(CoroutineAttack());
         }
@@ -78,7 +79,7 @@ public class SCR_MC : SCR_Combatant
 
     private void FixedUpdate()
     {
-        if (!_pause.isPaused) _rb.MovePosition(_rb.position + _moveVector * _speed * Time.fixedDeltaTime);
+        if (!_pause.isPaused && !_isDead) _rb.MovePosition(_rb.position + _moveVector * _speed * Time.fixedDeltaTime);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -116,19 +117,22 @@ public class SCR_MC : SCR_Combatant
     private IEnumerator CoroutineDamage(StatusValues enemy)
     {
         isBeingDamaged = true;
-        animator.SetTrigger("Hit");
-      
         int damage = CalculateDamage(enemy.ATK, _statusValues.DEF);
         int tempHP = _statusValues.HP;
         if(_statusValues.battery <= 0)  _statusValues.HP -= damage;
         else  gameObject.GetComponent<SCR_BatteryManager>().UseBattery(damage);
         Debug.Log("MC has " + _statusValues.battery + " battery left, MC lost " + damage + " HP!");
         if (_statusValues.HP <= 0){
+            _isDead = true;
             animator.SetBool("Dead", true);
              SCR_SoundManager.instance.PlaySound(_soundDeath);
         } 
-        else if (_statusValues.battery < _statusValues.maxBattery) AnimateDamage();
-        HurtSFX();
+        else if (_statusValues.battery < _statusValues.maxBattery)
+        {
+            AnimateDamage();
+            animator.SetTrigger("Hit");
+            HurtSFX();
+        } 
         yield return new WaitForSeconds(_statusValues.invicibility);
         isBeingDamaged = false;
     }
