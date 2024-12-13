@@ -15,7 +15,7 @@ MonoBehaviour:
   _maxHP: 50
   _maxBattery: 1000
   _initialBattery: 1000
-  _battery: 1000
+  _battery: 0
   _initialATK: 50
   _DEF: 50
   _initialSpeed: 2.5
