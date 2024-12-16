@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statusValues: {fileID: 11400000, guid: 5126a096f79dc5f4d9e1325aa02485cd, type: 2}
   batteryBar: {fileID: 3559206359076167765}
-  sprintCost: 20
+  sprintCost: 5
   _mc: {fileID: 3417432873165472747}
 --- !u!1 &5312656014162034903
 GameObject:
